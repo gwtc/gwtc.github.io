@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+  <title>Summary Pages</title>
+<!--
+                                    Made by
+            ____  ___________
+           / __ \/ ____/ ___/__  ______ ___  ____ ___  ____ ________  __
+          / /_/ / __/  \__ \/ / / / __ `__ \/ __ `__ \/ __ `/ ___/ / / /
+         / ____/ /___ ___/ / /_/ / / / / / / / / / / / /_/ / /  / /_/ /
+        /_/   /_____//____/\__,_/_/ /_/ /_/_/ /_/ /_/\__,_/_/   \__, /
+                                                               /____/
+
+                                   MIT License
+
+       PESummary was developed by Hoy et al. and source code can be seen
+       here: git.ligo.org/lscsoft/pesummary. If you wish to use PESummary
+   for your own work, please cite PESummary. The following page gives details
+   https://lscsoft.docs.ligo.org/pesummary/stable/citing_pesummary.html.
+                                     Thanks!
+  -->
+<html lang='en'>
+    <title>title</title>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css'>
+
+</head>
+<body style='background-color:#F8F8F8; margin-top:5em; min-height: 100%'>
+
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js'></script>
+    <script src='https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js'></script>
+    <script src='../js/combine_corner.js'></script>
+    <script src='../js/grab.js'></script>
+    <script src='../js/modal.js'></script>
+    <script src='../js/multi_dropbar.js'></script>
+    <script src='../js/multiple_posteriors.js'></script>
+    <script src='../js/search.js'></script>
+    <script src='../js/side_bar.js'></script>
+    <script src='../js/html_to_csv.js'></script>
+    <script src='../js/html_to_json.js'></script>
+    <script src='../js/html_to_shell.js'></script>
+    <script src='../js/expert.js'></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/navbar.css">
+    <link rel="stylesheet" href="../css/font.css">
+    <link rel="stylesheet" href="../css/table.css">
+    <link rel="stylesheet" href="../css/image_styles.css">
+    <link rel="stylesheet" href="../css/watermark.css">
+    <link rel="stylesheet" href="../css/toggle.css">
+
+<h7 hidden>C01:SEOBNRv4PHM</h7>
+<h7 hidden>C01:SEOBNRv4PHM</h7>
+<nav class='navbar navbar-expand-sm fixed-top navbar-custom' style='background-color: #029e73'>
+  <a class='navbar-brand' href='#' style='color: white'>Navbar</a>
+  <button class='navbar-toggler' type='button' data-toggle='collapse' data-target='#collapsibleNavbar'>
+    <span class='navbar-toggler-icon'></span>
+  </button>
+    <div class='collapse navbar-collapse' id='collapsibleNavbar'>
+      <ul class='navbar-nav'>
+        <li class='nav-item'>
+          <a class='nav-link' href='#' onclick='grab_html("home")'>home</a>
+        </li>
+        <li class='nav-item'>
+          <li class='nav-item dropdown'>
+            <a class='nav-link dropdown-toggle' href='#' id='navbarDropdown' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
+            Result Pages
+            </a>
+            <ul class='dropdown-menu' aria-labelledby='dropdown1'>
+              <li class='dropdown-item' href='#' onclick='grab_html("C01:IMRPhenomXPHM", label="C01:IMRPhenomXPHM")'><a>C01:IMRPhenomXPHM</a></li>
+              <li class='dropdown-item' href='#' onclick='grab_html("C01:Mixed", label="C01:Mixed")'><a>C01:Mixed</a></li>
+              <li class='dropdown-item' href='#' onclick='grab_html("C01:SEOBNRv4PHM", label="C01:SEOBNRv4PHM")'><a>C01:SEOBNRv4PHM</a></li>
+              <li class='dropdown-item' href='#' onclick='grab_html("Comparison")'><a>Comparison</a></li>
+            </ul>
+          </li>
+        <li class='nav-item'>
+          <a class='nav-link' href='#' onclick='grab_html("Corner", label="C01:SEOBNRv4PHM")'>Corner</a>
+        </li>
+        <li class='nav-item'>
+          <a class='nav-link' href='#' onclick='grab_html("Config", label="C01:SEOBNRv4PHM")'>Config</a>
+        </li>
+        <li class='nav-item'>
+          <li class='nav-item dropdown'>
+            <a class='nav-link dropdown-toggle' href='#' id='navbarDropdown' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
+            1d Histograms
+            </a>
+            <ul class='dropdown-menu' aria-labelledby='dropdown1'>
+              <li class='dropdown-item' href='#' onclick='grab_html("Custom", label="C01:SEOBNRv4PHM")'><a>Custom</a></li>
+              <li class='dropdown-item' href='#' onclick='grab_html("All", label="C01:SEOBNRv4PHM")'><a>All</a></li>
+              <li class='dropdown-item dropdown'>
+                <a class='dropdown-toggle' id='masses' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>masses</a>
+                <ul class='dropdown-menu' aria-labelledby='masses'>
+                  <li class='dropdown-item' href='#' onclick='grab_html("masses_all", label="C01:SEOBNRv4PHM")'><a>masses_all</a></li>
+                  <li class='dropdown-item' href='#' onclick='grab_html("chirp_mass", label="C01:SEOBNRv4PHM")'><a>chirp_mass</a></li>
+                  <li class='dropdown-item' href='#' onclick='grab_html("inverted_mass_ratio", label="C01:SEOBNRv4PHM")'><a>inverted_mass_ratio</a></li>
+                  <li class='dropdown-item' href='#' onclick='grab_html("mass_1", label="C01:SEOBNRv4PHM")'><a>mass_1</a></li>
+                  <li class='dropdown-item' href='#' onclick='grab_html("mass_2", label="C01:SEOBNRv4PHM")'><a>mass_2</a></li>
+                  <li class='dropdown-item' href='#' onclick='grab_html("mass_ratio", label="C01:SEOBNRv4PHM")'><a>mass_ratio</a></li>
+                  <li class='dropdown-item' href='#' onclick='grab_html("symmetric_mass_ratio", label="C01:SEOBNRv4PHM")'><a>symmetric_mass_ratio</a></li>
+                  <li class='dropdown-item' href='#' onclick='grab_html("total_mass", label="C01:SEOBNRv4PHM")'><a>total_mass</a></li>
+                </ul>
+              </li>
+              <li class='dropdown-item dropdown'>
+                <a class='dropdown-toggle' id='source' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>source</a>
+                <ul class='dropdown-menu' aria-labelledby='source'>
+                  <li class='dropdown-item' href='#' onclick='grab_html("source_all", label="C01:SEOBNRv4PHM")'><a>source_all</a></li>
+                  <li class='dropdown-item' href='#' onclick='grab_html("chirp_mass_source", label="C01:SEOBNRv4PHM")'><a>chirp_mass_source</a></li>
+                  <li class='dropdown-item' href='#' onclick='grab_html("mass_1_source", label="C01:SEOBNRv4PHM")'><a>mass_1_source</a></li>
+                  <li class='dropdown-item' href='#' onclick='grab_html("mass_2_source", label="C01:SEOBNRv4PHM")'><a>mass_2_source</a></li>
+                  <li class='dropdown-item' href='#' onclick='grab_html("total_mass_source", label="C01:SEOBNRv4PHM")'><a>total_mass_source</a></li>
+                </ul>
+              </li>
+              <li class='dropdown-item dropdown'>
+                <a class='dropdown-toggle' id='remnant' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>remnant</a>
+                <ul class='dropdown-menu' aria-labelledby='remnant'>
+                  <li class='dropdown-item' href='#' onclick='grab_html("remnant_all", label="C01:SEOBNRv4PHM")'><a>remnant_all</a></li>
+                  <li class='dropdown-item' href='#' onclick='grab_html("final_mass", label="C01:SEOBNRv4PHM")'><a>final_mass</a></li>
+                  <li class='dropdown-item' href='#' onclick='grab_html("final_mass_source", label="C01:SEOBNRv4PHM")'><a>final_mass_source</a></li>
+                  <li class='dropdown-item' href='#' onclick='grab_html("final_spin", label="C01:SEOBNRv4PHM")'><a>final_spin</a></li>
+                </ul>
+              </li>
+              <li class='dropdown-item dropdown'>
+                <a class='dropdown-toggle' id='inclination' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>inclination</a>
+                <ul class='dropdown-menu' aria-labelledby='inclination'>
+                  <li class='dropdown-item' href='#' onclick='grab_html("inclination_all", label="C01:SEOBNRv4PHM")'><a>inclination_all</a></li>
+                  <li class='dropdown-item' href='#' onclick='grab_html("cos_iota", label="C01:SEOBNRv4PHM")'><a>cos_iota</a></li>
+                  <li class='dropdown-item' href='#' onclick='grab_html("cos_theta_jn", label="C01:SEOBNRv4PHM")'><a>cos_theta_jn</a></li>
+                  <li class='dropdown-item' href='#' onclick='grab_html("iota", label="C01:SEOBNRv4PHM")'><a>iota</a></li>
+                  <li class='dropdown-item' href='#' onclick='grab_html("theta_jn", label="C01:SEOBNRv4PHM")'><a>theta_jn</a></li>
+                  <li class='dropdown-item' href='#' onclick='grab_html("viewing_angle", label="C01:SEOBNRv4PHM")'><a>viewing_angle</a></li>
+                </ul>
+              </li>
+              <li class='dropdown-item dropdown'>
+                <a class='dropdown-toggle' id='spins' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>spins</a>
+                <ul class='dropdown-menu' aria-labelledby='spins'>
+                  <li class='dropdown-item' href='#' onclick='grab_html("spins_all", label="C01:SEOBNRv4PHM")'><a>spins_all</a></li>
+                  <li class='dropdown-item' href='#' onclick='grab_html("a_1", label="C01:SEOBNRv4PHM")'><a>a_1</a></li>
+                  <li class='dropdown-item' href='#' onclick='grab_html("a_2", label="C01:SEOBNRv4PHM")'><a>a_2</a></li>
+                  <li class='dropdown-item' href='#' onclick='grab_html("chi_eff", label="C01:SEOBNRv4PHM")'><a>chi_eff</a></li>
+                  <li class='dropdown-item' href='#' onclick='grab_html("chi_eff_infinity_only_prec_avg", label="C01:SEOBNRv4PHM")'><a>chi_eff_infinity_only_prec_avg</a></li>
+                  <li class='dropdown-item' href='#' onclick='grab_html("chi_p", label="C01:SEOBNRv4PHM")'><a>chi_p</a></li>
+                  <li class='dropdown-item' href='#' onclick='grab_html("chi_p_2spin", label="C01:SEOBNRv4PHM")'><a>chi_p_2spin</a></li>
+                  <li class='dropdown-item' href='#' onclick='grab_html("chi_p_infinity_only_prec_avg", label="C01:SEOBNRv4PHM")'><a>chi_p_infinity_only_prec_avg</a></li>
+                  <li class='dropdown-item' href='#' onclick='grab_html("spin_1x", label="C01:SEOBNRv4PHM")'><a>spin_1x</a></li>
+                  <li class='dropdown-item' href='#' onclick='grab_html("spin_1y", label="C01:SEOBNRv4PHM")'><a>spin_1y</a></li>
+                  <li class='dropdown-item' href='#' onclick='grab_html("spin_1z", label="C01:SEOBNRv4PHM")'><a>spin_1z</a></li>
+                  <li class='dropdown-item' href='#' onclick='grab_html("spin_1z_infinity_only_prec_avg", label="C01:SEOBNRv4PHM")'><a>spin_1z_infinity_only_prec_avg</a></li>
+                  <li class='dropdown-item' href='#' onclick='grab_html("spin_2x", label="C01:SEOBNRv4PHM")'><a>spin_2x</a></li>
+                  <li class='dropdown-item' href='#' onclick='grab_html("spin_2y", label="C01:SEOBNRv4PHM")'><a>spin_2y</a></li>
+                  <li class='dropdown-item' href='#' onclick='grab_html("spin_2z", label="C01:SEOBNRv4PHM")'><a>spin_2z</a></li>
+                  <li class='dropdown-item' href='#' onclick='grab_html("spin_2z_infinity_only_prec_avg", label="C01:SEOBNRv4PHM")'><a>spin_2z_infinity_only_prec_avg</a></li>
+                </ul>
+              </li>
+              <li class='dropdown-item dropdown'>
+                <a class='dropdown-toggle' id='spin_angles' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>spin_angles</a>
+                <ul class='dropdown-menu' aria-labelledby='spin_angles'>
+                  <li class='dropdown-item' href='#' onclick='grab_html("spin_angles_all", label="C01:SEOBNRv4PHM")'><a>spin_angles_all</a></li>
+                  <li class='dropdown-item' href='#' onclick='grab_html("beta", label="C01:SEOBNRv4PHM")'><a>beta</a></li>
+                  <li class='dropdown-item' href='#' onclick='grab_html("cos_tilt_1", label="C01:SEOBNRv4PHM")'><a>cos_tilt_1</a></li>
+                  <li class='dropdown-item' href='#' onclick='grab_html("cos_tilt_1_infinity_only_prec_avg", label="C01:SEOBNRv4PHM")'><a>cos_tilt_1_infinity_only_prec_avg</a></li>
+                  <li class='dropdown-item' href='#' onclick='grab_html("cos_tilt_2", label="C01:SEOBNRv4PHM")'><a>cos_tilt_2</a></li>
+                  <li class='dropdown-item' href='#' onclick='grab_html("cos_tilt_2_infinity_only_prec_avg", label="C01:SEOBNRv4PHM")'><a>cos_tilt_2_infinity_only_prec_avg</a></li>
+                  <li class='dropdown-item' href='#' onclick='grab_html("phi_1", label="C01:SEOBNRv4PHM")'><a>phi_1</a></li>
+                  <li class='dropdown-item' href='#' onclick='grab_html("phi_12", label="C01:SEOBNRv4PHM")'><a>phi_12</a></li>
+                  <li class='dropdown-item' href='#' onclick='grab_html("phi_2", label="C01:SEOBNRv4PHM")'><a>phi_2</a></li>
+                  <li class='dropdown-item' href='#' onclick='grab_html("phi_jl", label="C01:SEOBNRv4PHM")'><a>phi_jl</a></li>
+                  <li class='dropdown-item' href='#' onclick='grab_html("tilt_1", label="C01:SEOBNRv4PHM")'><a>tilt_1</a></li>
+                  <li class='dropdown-item' href='#' onclick='grab_html("tilt_1_infinity_only_prec_avg", label="C01:SEOBNRv4PHM")'><a>tilt_1_infinity_only_prec_avg</a></li>
+                  <li class='dropdown-item' href='#' onclick='grab_html("tilt_2", label="C01:SEOBNRv4PHM")'><a>tilt_2</a></li>
+                  <li class='dropdown-item' href='#' onclick='grab_html("tilt_2_infinity_only_prec_avg", label="C01:SEOBNRv4PHM")'><a>tilt_2_infinity_only_prec_avg</a></li>
+                </ul>
+              </li>
+              <li class='dropdown-item dropdown'>
+                <a class='dropdown-toggle' id='tidal' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>tidal</a>
+                <ul class='dropdown-menu' aria-labelledby='tidal'>
+                </ul>
+              </li>
+              <li class='dropdown-item dropdown'>
+                <a class='dropdown-toggle' id='location' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>location</a>
+                <ul class='dropdown-menu' aria-labelledby='location'>
+                  <li class='dropdown-item' href='#' onclick='grab_html("location_all", label="C01:SEOBNRv4PHM")'><a>location_all</a></li>
+                  <li class='dropdown-item' href='#' onclick='grab_html("comoving_distance", label="C01:SEOBNRv4PHM")'><a>comoving_distance</a></li>
+                  <li class='dropdown-item' href='#' onclick='grab_html("dec", label="C01:SEOBNRv4PHM")'><a>dec</a></li>
+                  <li class='dropdown-item' href='#' onclick='grab_html("luminosity_distance", label="C01:SEOBNRv4PHM")'><a>luminosity_distance</a></li>
+                  <li class='dropdown-item' href='#' onclick='grab_html("psi", label="C01:SEOBNRv4PHM")'><a>psi</a></li>
+                  <li class='dropdown-item' href='#' onclick='grab_html("psi_J", label="C01:SEOBNRv4PHM")'><a>psi_J</a></li>
+                  <li class='dropdown-item' href='#' onclick='grab_html("psi_wrapped", label="C01:SEOBNRv4PHM")'><a>psi_wrapped</a></li>
+                  <li class='dropdown-item' href='#' onclick='grab_html("ra", label="C01:SEOBNRv4PHM")'><a>ra</a></li>
+                  <li class='dropdown-item' href='#' onclick='grab_html("redshift", label="C01:SEOBNRv4PHM")'><a>redshift</a></li>
+                </ul>
+              </li>
+              <li class='dropdown-item dropdown'>
+                <a class='dropdown-toggle' id='timings' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>timings</a>
+                <ul class='dropdown-menu' aria-labelledby='timings'>
+                  <li class='dropdown-item' href='#' onclick='grab_html("timings_all", label="C01:SEOBNRv4PHM")'><a>timings_all</a></li>
+                  <li class='dropdown-item' href='#' onclick='grab_html("geocent_time", label="C01:SEOBNRv4PHM")'><a>geocent_time</a></li>
+                </ul>
+              </li>
+              <li class='dropdown-item dropdown'>
+                <a class='dropdown-toggle' id='SNR' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>SNR</a>
+                <ul class='dropdown-menu' aria-labelledby='SNR'>
+                </ul>
+              </li>
+              <li class='dropdown-item dropdown'>
+                <a class='dropdown-toggle' id='calibration' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>calibration</a>
+                <ul class='dropdown-menu' aria-labelledby='calibration'>
+                </ul>
+              </li>
+              <li class='dropdown-item dropdown'>
+                <a class='dropdown-toggle' id='energy' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>energy</a>
+                <ul class='dropdown-menu' aria-labelledby='energy'>
+                  <li class='dropdown-item' href='#' onclick='grab_html("energy_all", label="C01:SEOBNRv4PHM")'><a>energy_all</a></li>
+                  <li class='dropdown-item' href='#' onclick='grab_html("peak_luminosity", label="C01:SEOBNRv4PHM")'><a>peak_luminosity</a></li>
+                  <li class='dropdown-item' href='#' onclick='grab_html("radiated_energy", label="C01:SEOBNRv4PHM")'><a>radiated_energy</a></li>
+                </ul>
+              </li>
+              <li class='dropdown-item dropdown'>
+                <a class='dropdown-toggle' id='others' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>others</a>
+                <ul class='dropdown-menu' aria-labelledby='others'>
+                  <li class='dropdown-item' href='#' onclick='grab_html("others_all", label="C01:SEOBNRv4PHM")'><a>others_all</a></li>
+                  <li class='dropdown-item' href='#' onclick='grab_html("log_likelihood", label="C01:SEOBNRv4PHM")'><a>log_likelihood</a></li>
+                  <li class='dropdown-item' href='#' onclick='grab_html("phase", label="C01:SEOBNRv4PHM")'><a>phase</a></li>
+                  <li class='dropdown-item' href='#' onclick='grab_html("Npts", label="C01:SEOBNRv4PHM")'><a>Npts</a></li>
+                  <li class='dropdown-item' href='#' onclick='grab_html("p", label="C01:SEOBNRv4PHM")'><a>p</a></li>
+                  <li class='dropdown-item' href='#' onclick='grab_html("ps", label="C01:SEOBNRv4PHM")'><a>ps</a></li>
+                  <li class='dropdown-item' href='#' onclick='grab_html("neff", label="C01:SEOBNRv4PHM")'><a>neff</a></li>
+                  <li class='dropdown-item' href='#' onclick='grab_html("comoving_volume", label="C01:SEOBNRv4PHM")'><a>comoving_volume</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        <li class='nav-item'>
+          <li class='nav-item dropdown'>
+            <a class='nav-link dropdown-toggle' href='#' id='navbarDropdown' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
+            Switch
+            </a>
+            <ul class='dropdown-menu' aria-labelledby='dropdown1'>
+              <li class='dropdown-item' href='#' onclick='grab_html("C01:IMRPhenomXPHM", label="switch")'><a>C01:IMRPhenomXPHM</a></li>
+              <li class='dropdown-item' href='#' onclick='grab_html("C01:Mixed", label="switch")'><a>C01:Mixed</a></li>
+              <li class='dropdown-item' href='#' onclick='grab_html("Comparison", label="switch")'><a>Comparison</a></li>
+            </ul>
+          </li>
+        <li class='nav-item'>
+          <li class='nav-item dropdown'>
+            <a class='nav-link dropdown-toggle' href='#' id='navbarDropdown' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
+            Interactive
+            </a>
+            <ul class='dropdown-menu' aria-labelledby='dropdown1'>
+              <li class='dropdown-item' href='#' onclick='grab_html("Interactive_Corner", label="C01:SEOBNRv4PHM")'><a>Interactive_Corner</a></li>
+            </ul>
+          </li>
+        <li class='nav-item'>
+          <li class='nav-item dropdown'>
+            <a class='nav-link dropdown-toggle' href='#' id='navbarDropdown' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
+            2d Histograms
+            </a>
+            <ul class='dropdown-menu' aria-labelledby='dropdown1'>
+              <li class='dropdown-item' href='#' onclick='grab_html("masses", label="C01:SEOBNRv4PHM")'><a>masses</a></li>
+              <li class='dropdown-item' href='#' onclick='grab_html("spins", label="C01:SEOBNRv4PHM")'><a>spins</a></li>
+              <li class='dropdown-item' href='#' onclick='grab_html("location", label="C01:SEOBNRv4PHM")'><a>location</a></li>
+              <li class='dropdown-item' href='#' onclick='grab_html("timings", label="C01:SEOBNRv4PHM")'><a>timings</a></li>
+            </ul>
+          </li>
+      </ul>
+    </div>
+    <div class='collapse navbar-collapse' id='collapsibleNavbar'>
+      <ul class='navbar-nav flex-row ml-md-auto d-none d-md-flex'style='margin-right:1em;'>
+  <a class='nav-link' href='#', onclick='grab_html("Downloads")'>Downloads</a>
+  <a class='nav-link' href='#', onclick='grab_html("About")'>About</a>
+      </ul>
+    </div>
+    <input type='text' placeholder='search' id='search'>
+    <button type='submit' onclick='myFunction()'>Search</button>
+</nav>
+  <div class='banner'>
+C01:SEOBNRv4PHM
+</div>
+  <div class='paragraph'>
+Below are interative corner plots for C01:SEOBNRv4PHM. Simply use the Box Select to select the points you wish to look at
+</div>
+<div class='container' style='margin-top:3em; margin-bottom:5em; background-color:#FFFFFF; box-shadow: 0 0 5px grey; max-width: 1400px'>
+<script src='https://cdn.plot.ly/plotly-latest.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_SVG'></script><div>                            <div id="d4b27d40-700f-44e8-8189-1c20d4295197" class="plotly-graph-div" style="height:900px; width:900px;"></div>            <script type="text/javascript">                                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("d4b27d40-700f-44e8-8189-1c20d4295197")) {                    Plotly.newPlot(                        "d4b27d40-700f-44e8-8189-1c20d4295197",                        [{"diagonal":{"visible":false},"dimensions":[{"label":"$d_{L} [\\mathrm{Mpc}]$","values":[7672.3948,14070.206,16182.809999999998,5970.202899999999,11433.907000000001,12604.512999999999,12364.077,8046.405299999999,10469.969000000003,9346.326599999999,7067.529500000001,18502.642,6988.854700000001,4790.4336,17768.592,16819.484,14939.464,22714.371,7224.4412999999995,19753.831000000002,8802.9689,10827.522,13908.54,13382.511,18285.969999999998,15296.196,9814.6848,8147.3707,16136.536999999998,15180.164999999999,6206.705800000001,6869.325000000001,12792.483,11456.678999999998,23062.571,12662.965999999999,10369.971000000001,16397.371,7585.4195,14113.482000000002,18152.034,24432.294,7833.1281,2848.285,19441.988999999998,19267.038]},{"label":"$z$","values":[1.1045806623936523,1.8069316309183734,2.0257612963634473,0.9013160030424943,1.526214616583489,1.6520540019380807,1.6263732764511278,1.1479861610358573,1.4209336828020362,1.2960140358959005,1.0334975340057202,2.2611124777468046,1.0241655290575549,0.753417362544194,2.1871412833439505,2.090825613627141,1.897551607983545,2.6779952016247863,1.0520485761733596,2.386230642643102,1.2346399808436017,1.4601743137400203,1.7899815008101785,1.734607738633429,2.2393234683728207,1.9344994231860921,1.3483937679304516,1.1596366684182025,2.021017535864374,1.922496591226632,0.9301946330952854,1.0099473872502602,1.6720743816324397,1.5286827454643828,2.7119550321923533,1.6582849913631856,1.4099172630239947,2.0477306177625647,1.0944288310525654,1.8114637044096304,2.225835773701567,2.8448883836326178,1.1232832520722893,0.4905621631648289,2.355155585980276,2.3376906564708135]},{"label":"$m_{1}^{\\mathrm{source}} [M_{\\odot}]$","values":[40.75778492730235,28.804383800950223,25.563400223594194,40.303445023014056,30.27554962983974,28.497564508403464,26.523698525492616,184.7828245823481,163.5441081317616,170.17081075793328,190.66814860416216,118.8908486431245,19.127035533514977,21.865802642885413,115.43617847213447,117.23267673286186,117.87242686513682,87.80994055058245,141.94290689899964,85.09192090208403,106.76270989742824,91.33736123697528,78.33872014439224,79.9250206573405,65.41141447242875,70.38345564769334,87.34704665000407,93.70537783479243,66.70704741286454,63.08687940081245,95.26462608857678,89.58768828588236,64.3680509727888,66.39234609447558,42.38885941111971,53.997671606455995,5.910857695639558,45.41213360306979,62.31503217724966,40.26110663369525,33.23873176499763,27.885711964075767,48.99359042109484,69.71381842899305,30.16372189203,30.30706569642355]},{"label":"$m_{2}^{\\mathrm{source}} [M_{\\odot}]$","values":[34.4756279939764,3.459861114188434,12.21033927706179,22.529234452061065,26.41169857936926,13.9359100429294,21.338977784501868,10.904664762227485,5.488286232038221,19.671520859138074,6.580199275502225,9.511404225294019,5.354257764208688,1.932104399311041,3.0797922424390696,8.844133386069972,13.049740993677835,6.447987204965194,5.80816464989623,7.829337926995504,11.156850863550765,30.23608188434276,4.37526413578558,4.463859963367244,24.200189565933673,15.934450567801228,8.348880527509838,18.933067120937654,25.60079115127392,5.237394646053511,14.897724046557572,5.384206108402253,40.382367624840676,3.1527265388667525,23.69885955974087,25.93708884638548,4.65814124502922,42.84672642619143,4.728944642641535,39.739527785744976,0.6981893555652418,2.198354791255141,26.12622029861486,25.515493375497893,9.248682573667812,22.894673253152696]},{"label":"$M^{\\mathrm{source}} [M_{\\odot}]$","values":[75.23341292127876,32.26424491513866,37.77373950065597,62.83267947507512,56.68724820920901,42.43347455133286,47.862676309994484,195.68748934457554,169.0323943637998,189.84233161707135,197.2483478796644,128.40225286841851,24.48129329772367,23.79790704219645,118.51597071457356,126.07681011893182,130.92216785881462,94.25792775554764,147.75107154889588,92.92125882907953,117.919560760979,121.57344312131805,82.71398428017783,84.38888062070774,89.61160403836242,86.31790621549456,95.69592717751394,112.63844495573008,92.30783856413846,68.32427404686597,110.16235013513435,94.97189439428463,104.75041859762948,69.54507263334233,66.08771897086058,79.93476045284147,10.568998940668777,88.25886002926121,67.0439768198912,80.00063441944023,33.93692112056288,30.084066755330902,75.11981071970969,95.22931180449095,39.41240446569781,53.20173894957624]},{"label":"$\\mathcal{M}^{\\mathrm{source}} [M_{\\odot}]$","values":[32.61005285481718,7.895253005838298,15.176436682861139,26.01453375313237,24.605712540873984,17.132633672685415,20.686414414228953,33.43888131563724,21.195760563668586,45.61999061463592,25.125090948405038,25.722981832201686,8.480887308773527,5.013832893475945,13.054572106819752,24.50729263713188,30.818098067193855,18.068293331871303,20.691188667541795,19.977677714747045,26.993522384479345,44.43617215920163,13.72374566690839,14.001641256099308,33.822876109852615,27.711780345652922,20.967526090551786,34.59823667308099,35.18903414452766,13.948181888342086,30.396551613322053,16.38713319951227,44.14546837115828,10.568888539828482,27.36297756845262,32.1536753352683,4.561536174365594,38.39742221999127,13.07200721260686,34.82141057160806,3.260138969601522,5.981641822186529,30.84456246389718,35.83600393900674,14.067350067991804,22.886629469737553]}],"marker":{"color":"rgba(0,0,0,1)","line":{"color":"white","width":0.5},"showscale":false,"size":3},"selected":{"marker":{"color":"rgba(248,148,6,1)"}},"showupperhalf":false,"type":"splom"}],                        {"dragmode":"select","font":{"size":10},"height":900,"hovermode":"closest","template":{"data":{"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"choropleth":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"choropleth"}],"contourcarpet":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"contourcarpet"}],"contour":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"contour"}],"heatmapgl":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"heatmapgl"}],"heatmap":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"heatmap"}],"histogram2dcontour":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"histogram2dcontour"}],"histogram2d":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"histogram2d"}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"mesh3d":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"mesh3d"}],"parcoords":[{"line":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"parcoords"}],"pie":[{"automargin":true,"type":"pie"}],"scatter3d":[{"line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatter3d"}],"scattercarpet":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattercarpet"}],"scattergeo":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattergeo"}],"scattergl":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattergl"}],"scattermapbox":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattermapbox"}],"scatterpolargl":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterpolargl"}],"scatterpolar":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterpolar"}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"scatterternary":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterternary"}],"surface":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"surface"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}]},"layout":{"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"autotypenumbers":"strict","coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]],"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]},"colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"geo":{"bgcolor":"white","lakecolor":"white","landcolor":"#E5ECF6","showlakes":true,"showland":true,"subunitcolor":"white"},"hoverlabel":{"align":"left"},"hovermode":"closest","mapbox":{"style":"light"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"bgcolor":"#E5ECF6","radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","gridwidth":2,"linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white"},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","gridwidth":2,"linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white"},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","gridwidth":2,"linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white"}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"ternary":{"aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"bgcolor":"#E5ECF6","caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"title":{"x":0.05},"xaxis":{"automargin":true,"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","zerolinewidth":2},"yaxis":{"automargin":true,"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","zerolinewidth":2}}},"width":900},                        {"responsive": true}                    )                };                            </script>        </div>
+<script src='https://cdn.plot.ly/plotly-latest.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_SVG'></script><div>                            <div id="edacd275-f558-4d86-be95-060695362744" class="plotly-graph-div" style="height:900px; width:900px;"></div>            <script type="text/javascript">                                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("edacd275-f558-4d86-be95-060695362744")) {                    Plotly.newPlot(                        "edacd275-f558-4d86-be95-060695362744",                        [{"diagonal":{"visible":false},"dimensions":[{"label":"$\\alpha [\\mathrm{rad}]$","values":[1.617813,0.68564739,0.70546919,0.72067144,3.7017923,3.9105028,1.5409309,0.94877878,4.3310879,1.9034579,2.3964842,1.3949066,0.91337071,3.8793971,0.41321712,5.484716000000001,3.5056519,3.520335700000001,3.3947865,1.6476819,4.965497900000001,1.5099835,2.7882829,1.8951299,0.28592985,0.13928218,4.6331153,4.880614700000001,0.7593783,2.225045,1.8454335,5.397968799999999,5.8341373,5.2895796,2.7610484,1.7722295,0.40502236,1.1852878999999998,0.30471569,5.0019747,1.546194,3.8642823,0.39522544,0.40730308,3.5018593,0.35315408]},{"label":"$\\delta [\\mathrm{rad}]$","values":[0.73102045,0.11889231,-1.3108716,-0.97133188,-0.4163608,-1.0631385000000002,0.82106849,-0.29411138,-0.11470243,-1.0494484,-0.32464031,0.50552159,0.58270411,-0.082616417,1.4472948,-0.35663595,-0.74928812,0.32264237,1.0577886,-0.45418498,0.65991826,0.7839515099999999,0.29817755,-0.20867729,0.63478292,0.075421318,-1.4609128,1.0923101999999998,0.34849152,0.51062664,1.2359002,0.06413125900000001,0.55082152,-1.0801201999999999,0.062605173,-0.99069879,-0.46243779,0.70117679,0.26636597,0.14367359,-0.7067248,0.73941681,-0.41736835,-0.60524065,-0.083515902,-1.3730973]},{"label":"$\\Psi [\\mathrm{rad}]$","values":[3.1384432092364105,1.016834230855098,1.2847563370045496,2.7544780078758486,2.548712622537832,1.6845221909012666,2.766886183961512,2.644283197042906,1.4982108056713683,1.744650846697522,0.5832450357035088,0.35281176565802363,0.5921134798416205,0.5246240167890723,0.6394027387674824,0.4960256323409346,3.0722587686312024,1.9389781899058895,2.806108945783593,2.4781687461707382,2.5007547757363606,0.8616164071353397,2.2171370004395174,0.34963720546585186,2.6067378588361554,1.35812631937286,1.6531653743151047,3.1123617417130105,1.4021270992928858,2.4376552781874548,2.548222000352784,3.035546647578452,0.6007617039118812,2.500489997629912,0.759780795723721,1.0305911786199755,0.21716625078154866,0.24819826176929266,0.4433783845482473,0.668353290911809,2.3112964983484283,3.1286495874977134,0.457318923128727,2.221129883578464,0.4804025639309506,0.7302058327766099]},{"label":"$d_{L} [\\mathrm{Mpc}]$","values":[7672.3948,14070.206,16182.809999999998,5970.202899999999,11433.907000000001,12604.512999999999,12364.077,8046.405299999999,10469.969000000003,9346.326599999999,7067.529500000001,18502.642,6988.854700000001,4790.4336,17768.592,16819.484,14939.464,22714.371,7224.4412999999995,19753.831000000002,8802.9689,10827.522,13908.54,13382.511,18285.969999999998,15296.196,9814.6848,8147.3707,16136.536999999998,15180.164999999999,6206.705800000001,6869.325000000001,12792.483,11456.678999999998,23062.571,12662.965999999999,10369.971000000001,16397.371,7585.4195,14113.482000000002,18152.034,24432.294,7833.1281,2848.285,19441.988999999998,19267.038]}],"marker":{"color":"rgba(0,0,0,1)","line":{"color":"white","width":0.5},"showscale":false,"size":3},"selected":{"marker":{"color":"rgba(248,148,6,1)"}},"showupperhalf":false,"type":"splom"}],                        {"dragmode":"select","font":{"size":10},"height":900,"hovermode":"closest","template":{"data":{"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"choropleth":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"choropleth"}],"contourcarpet":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"contourcarpet"}],"contour":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"contour"}],"heatmapgl":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"heatmapgl"}],"heatmap":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"heatmap"}],"histogram2dcontour":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"histogram2dcontour"}],"histogram2d":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"histogram2d"}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"mesh3d":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"mesh3d"}],"parcoords":[{"line":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"parcoords"}],"pie":[{"automargin":true,"type":"pie"}],"scatter3d":[{"line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatter3d"}],"scattercarpet":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattercarpet"}],"scattergeo":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattergeo"}],"scattergl":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattergl"}],"scattermapbox":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattermapbox"}],"scatterpolargl":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterpolargl"}],"scatterpolar":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterpolar"}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"scatterternary":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterternary"}],"surface":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"surface"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}]},"layout":{"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"autotypenumbers":"strict","coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]],"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]},"colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"geo":{"bgcolor":"white","lakecolor":"white","landcolor":"#E5ECF6","showlakes":true,"showland":true,"subunitcolor":"white"},"hoverlabel":{"align":"left"},"hovermode":"closest","mapbox":{"style":"light"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"bgcolor":"#E5ECF6","radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","gridwidth":2,"linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white"},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","gridwidth":2,"linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white"},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","gridwidth":2,"linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white"}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"ternary":{"aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"bgcolor":"#E5ECF6","caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"title":{"x":0.05},"xaxis":{"automargin":true,"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","zerolinewidth":2},"yaxis":{"automargin":true,"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","zerolinewidth":2}}},"width":900},                        {"responsive": true}                    )                };                            </script>        </div>
+</div>
+<script>
+  $(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip();
+  });
+</script>
+<div class='jumbotron' style='margin-bottom:0; line-height: 0.5;background-color:#989898; bottom:0; position:bottom;width:100%'>
+<div class='container'>
+  <div class='row'>
+    <div class='col-sm-4 icon-bar'>
+      <div class='icon'>
+<a href='https://git.ligo.org/lscsoft/pesummary/tree/v1.3.2' data-toggle='tooltip' title='View PESummary-v1.3.2'><i class='fa fa-code' style='font-size: 30px; color: #E8E8E8; font-weight: 900; padding-right:10px'></i></a>
+<a href='https://git.ligo.org/lscsoft/pesummary/issues' data-toggle='tooltip' title='Open an issue ticket'><i class='fa fa-ticket' style='font-size: 30px; color: #E8E8E8; font-weight: 900; padding-right:10px'></i></a>
+<a href='https://lscsoft.docs.ligo.org/pesummary/' data-toggle='tooltip' title='View the docs!'><i class='fa fa-book' style='font-size: 30px; color: #E8E8E8; font-weight: 900; padding-right:10px'></i></a>
+<a href='https://lscsoft.docs.ligo.org/pesummary/stable/tutorials/make_your_own_page_from_metafile.html' data-toggle='tooltip' title='Make your own page'><i class='fa fa-window-restore' style='font-size: 30px; color: #E8E8E8; font-weight: 900; padding-right:10px'></i></a>
+      </div>
+    </div>
+    <div class='col-sm-7'>
+<p style='color: #E8E8E8; font-weight: bold; font-family: arial-body; margin-top:14px'>This page was produced by root at 22:03 on October 17 2024</p>
+    </div>
+  </div>
+</div>
+</div>
