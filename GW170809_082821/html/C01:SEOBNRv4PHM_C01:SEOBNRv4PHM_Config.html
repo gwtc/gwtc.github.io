@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+  <title>Summary Pages</title>
+<!--
+                                    Made by
+            ____  ___________
+           / __ \/ ____/ ___/__  ______ ___  ____ ___  ____ ________  __
+          / /_/ / __/  \__ \/ / / / __ `__ \/ __ `__ \/ __ `/ ___/ / / /
+         / ____/ /___ ___/ / /_/ / / / / / / / / / / / /_/ / /  / /_/ /
+        /_/   /_____//____/\__,_/_/ /_/ /_/_/ /_/ /_/\__,_/_/   \__, /
+                                                               /____/
+
+                                   MIT License
+
+       PESummary was developed by Hoy et al. and source code can be seen
+       here: git.ligo.org/lscsoft/pesummary. If you wish to use PESummary
+   for your own work, please cite PESummary. The following page gives details
+   https://lscsoft.docs.ligo.org/pesummary/stable/citing_pesummary.html.
+                                     Thanks!
+  -->
+<html lang='en'>
+    <title>title</title>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css'>
+  <link rel='stylesheet' href='../css/C01:IMRPhenomXPHM_C01:IMRPhenomXPHM_Config.css'>
+  <link rel='stylesheet' href='../css/C01:Mixed_C01:Mixed_Config.css'>
+  <link rel='stylesheet' href='../css/C01:SEOBNRv4PHM_C01:SEOBNRv4PHM_Config.css'>
+
+</head>
+<body style='background-color:#F8F8F8; margin-top:5em; min-height: 100%'>
+
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js'></script>
+    <script src='https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js'></script>
+    <script src='../js/combine_corner.js'></script>
+    <script src='../js/grab.js'></script>
+    <script src='../js/modal.js'></script>
+    <script src='../js/multi_dropbar.js'></script>
+    <script src='../js/multiple_posteriors.js'></script>
+    <script src='../js/search.js'></script>
+    <script src='../js/side_bar.js'></script>
+    <script src='../js/html_to_csv.js'></script>
+    <script src='../js/html_to_json.js'></script>
+    <script src='../js/html_to_shell.js'></script>
+    <script src='../js/expert.js'></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/navbar.css">
+    <link rel="stylesheet" href="../css/font.css">
+    <link rel="stylesheet" href="../css/table.css">
+    <link rel="stylesheet" href="../css/image_styles.css">
+    <link rel="stylesheet" href="../css/watermark.css">
+    <link rel="stylesheet" href="../css/toggle.css">
+
+<h7 hidden>C01:SEOBNRv4PHM</h7>
+<h7 hidden>C01:SEOBNRv4PHM</h7>
+<nav class='navbar navbar-expand-sm fixed-top navbar-custom' style='background-color: #029e73'>
+  <a class='navbar-brand' href='#' style='color: white'>Navbar</a>
+  <button class='navbar-toggler' type='button' data-toggle='collapse' data-target='#collapsibleNavbar'>
+    <span class='navbar-toggler-icon'></span>
+  </button>
+    <div class='collapse navbar-collapse' id='collapsibleNavbar'>
+      <ul class='navbar-nav'>
+        <li class='nav-item'>
+          <a class='nav-link' href='#' onclick='grab_html("home")'>home</a>
+        </li>
+        <li class='nav-item'>
+          <li class='nav-item dropdown'>
+            <a class='nav-link dropdown-toggle' href='#' id='navbarDropdown' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
+            Result Pages
+            </a>
+            <ul class='dropdown-menu' aria-labelledby='dropdown1'>
+              <li class='dropdown-item' href='#' onclick='grab_html("C01:IMRPhenomXPHM", label="C01:IMRPhenomXPHM")'><a>C01:IMRPhenomXPHM</a></li>
+              <li class='dropdown-item' href='#' onclick='grab_html("C01:Mixed", label="C01:Mixed")'><a>C01:Mixed</a></li>
+              <li class='dropdown-item' href='#' onclick='grab_html("C01:SEOBNRv4PHM", label="C01:SEOBNRv4PHM")'><a>C01:SEOBNRv4PHM</a></li>
+              <li class='dropdown-item' href='#' onclick='grab_html("Comparison")'><a>Comparison</a></li>
+            </ul>
+          </li>
+        <li class='nav-item'>
+          <a class='nav-link' href='#' onclick='grab_html("Corner", label="C01:SEOBNRv4PHM")'>Corner</a>
+        </li>
+        <li class='nav-item'>
+          <a class='nav-link' href='#' onclick='grab_html("Config", label="C01:SEOBNRv4PHM")'>Config</a>
+        </li>
+        <li class='nav-item'>
+          <li class='nav-item dropdown'>
+            <a class='nav-link dropdown-toggle' href='#' id='navbarDropdown' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
+            1d Histograms
+            </a>
+            <ul class='dropdown-menu' aria-labelledby='dropdown1'>
+              <li class='dropdown-item' href='#' onclick='grab_html("Custom", label="C01:SEOBNRv4PHM")'><a>Custom</a></li>
+              <li class='dropdown-item' href='#' onclick='grab_html("All", label="C01:SEOBNRv4PHM")'><a>All</a></li>
+              <li class='dropdown-item dropdown'>
+                <a class='dropdown-toggle' id='masses' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>masses</a>
+                <ul class='dropdown-menu' aria-labelledby='masses'>
+                  <li class='dropdown-item' href='#' onclick='grab_html("masses_all", label="C01:SEOBNRv4PHM")'><a>masses_all</a></li>
+                  <li class='dropdown-item' href='#' onclick='grab_html("chirp_mass", label="C01:SEOBNRv4PHM")'><a>chirp_mass</a></li>
+                  <li class='dropdown-item' href='#' onclick='grab_html("mass_1", label="C01:SEOBNRv4PHM")'><a>mass_1</a></li>
+                  <li class='dropdown-item' href='#' onclick='grab_html("mass_2", label="C01:SEOBNRv4PHM")'><a>mass_2</a></li>
+                  <li class='dropdown-item' href='#' onclick='grab_html("mass_ratio", label="C01:SEOBNRv4PHM")'><a>mass_ratio</a></li>
+                  <li class='dropdown-item' href='#' onclick='grab_html("total_mass", label="C01:SEOBNRv4PHM")'><a>total_mass</a></li>
+                </ul>
+              </li>
+              <li class='dropdown-item dropdown'>
+                <a class='dropdown-toggle' id='source' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>source</a>
+                <ul class='dropdown-menu' aria-labelledby='source'>
+                  <li class='dropdown-item' href='#' onclick='grab_html("source_all", label="C01:SEOBNRv4PHM")'><a>source_all</a></li>
+                  <li class='dropdown-item' href='#' onclick='grab_html("chirp_mass_source", label="C01:SEOBNRv4PHM")'><a>chirp_mass_source</a></li>
+                  <li class='dropdown-item' href='#' onclick='grab_html("mass_1_source", label="C01:SEOBNRv4PHM")'><a>mass_1_source</a></li>
+                  <li class='dropdown-item' href='#' onclick='grab_html("mass_2_source", label="C01:SEOBNRv4PHM")'><a>mass_2_source</a></li>
+                  <li class='dropdown-item' href='#' onclick='grab_html("total_mass_source", label="C01:SEOBNRv4PHM")'><a>total_mass_source</a></li>
+                </ul>
+              </li>
+              <li class='dropdown-item dropdown'>
+                <a class='dropdown-toggle' id='remnant' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>remnant</a>
+                <ul class='dropdown-menu' aria-labelledby='remnant'>
+                </ul>
+              </li>
+              <li class='dropdown-item dropdown'>
+                <a class='dropdown-toggle' id='inclination' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>inclination</a>
+                <ul class='dropdown-menu' aria-labelledby='inclination'>
+                  <li class='dropdown-item' href='#' onclick='grab_html("inclination_all", label="C01:SEOBNRv4PHM")'><a>inclination_all</a></li>
+                  <li class='dropdown-item' href='#' onclick='grab_html("iota", label="C01:SEOBNRv4PHM")'><a>iota</a></li>
+                  <li class='dropdown-item' href='#' onclick='grab_html("theta_jn", label="C01:SEOBNRv4PHM")'><a>theta_jn</a></li>
+                </ul>
+              </li>
+              <li class='dropdown-item dropdown'>
+                <a class='dropdown-toggle' id='spins' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>spins</a>
+                <ul class='dropdown-menu' aria-labelledby='spins'>
+                  <li class='dropdown-item' href='#' onclick='grab_html("spins_all", label="C01:SEOBNRv4PHM")'><a>spins_all</a></li>
+                  <li class='dropdown-item' href='#' onclick='grab_html("a_1", label="C01:SEOBNRv4PHM")'><a>a_1</a></li>
+                  <li class='dropdown-item' href='#' onclick='grab_html("a_2", label="C01:SEOBNRv4PHM")'><a>a_2</a></li>
+                  <li class='dropdown-item' href='#' onclick='grab_html("chi_eff", label="C01:SEOBNRv4PHM")'><a>chi_eff</a></li>
+                  <li class='dropdown-item' href='#' onclick='grab_html("chi_p", label="C01:SEOBNRv4PHM")'><a>chi_p</a></li>
+                </ul>
+              </li>
+              <li class='dropdown-item dropdown'>
+                <a class='dropdown-toggle' id='spin_angles' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>spin_angles</a>
+                <ul class='dropdown-menu' aria-labelledby='spin_angles'>
+                  <li class='dropdown-item' href='#' onclick='grab_html("spin_angles_all", label="C01:SEOBNRv4PHM")'><a>spin_angles_all</a></li>
+                  <li class='dropdown-item' href='#' onclick='grab_html("phi_1", label="C01:SEOBNRv4PHM")'><a>phi_1</a></li>
+                  <li class='dropdown-item' href='#' onclick='grab_html("phi_12", label="C01:SEOBNRv4PHM")'><a>phi_12</a></li>
+                  <li class='dropdown-item' href='#' onclick='grab_html("phi_2", label="C01:SEOBNRv4PHM")'><a>phi_2</a></li>
+                  <li class='dropdown-item' href='#' onclick='grab_html("phi_jl", label="C01:SEOBNRv4PHM")'><a>phi_jl</a></li>
+                  <li class='dropdown-item' href='#' onclick='grab_html("tilt_1", label="C01:SEOBNRv4PHM")'><a>tilt_1</a></li>
+                  <li class='dropdown-item' href='#' onclick='grab_html("tilt_2", label="C01:SEOBNRv4PHM")'><a>tilt_2</a></li>
+                </ul>
+              </li>
+              <li class='dropdown-item dropdown'>
+                <a class='dropdown-toggle' id='tidal' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>tidal</a>
+                <ul class='dropdown-menu' aria-labelledby='tidal'>
+                </ul>
+              </li>
+              <li class='dropdown-item dropdown'>
+                <a class='dropdown-toggle' id='location' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>location</a>
+                <ul class='dropdown-menu' aria-labelledby='location'>
+                  <li class='dropdown-item' href='#' onclick='grab_html("location_all", label="C01:SEOBNRv4PHM")'><a>location_all</a></li>
+                  <li class='dropdown-item' href='#' onclick='grab_html("dec", label="C01:SEOBNRv4PHM")'><a>dec</a></li>
+                  <li class='dropdown-item' href='#' onclick='grab_html("luminosity_distance", label="C01:SEOBNRv4PHM")'><a>luminosity_distance</a></li>
+                  <li class='dropdown-item' href='#' onclick='grab_html("psi", label="C01:SEOBNRv4PHM")'><a>psi</a></li>
+                  <li class='dropdown-item' href='#' onclick='grab_html("ra", label="C01:SEOBNRv4PHM")'><a>ra</a></li>
+                  <li class='dropdown-item' href='#' onclick='grab_html("redshift", label="C01:SEOBNRv4PHM")'><a>redshift</a></li>
+                </ul>
+              </li>
+              <li class='dropdown-item dropdown'>
+                <a class='dropdown-toggle' id='timings' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>timings</a>
+                <ul class='dropdown-menu' aria-labelledby='timings'>
+                  <li class='dropdown-item' href='#' onclick='grab_html("timings_all", label="C01:SEOBNRv4PHM")'><a>timings_all</a></li>
+                  <li class='dropdown-item' href='#' onclick='grab_html("geocent_time", label="C01:SEOBNRv4PHM")'><a>geocent_time</a></li>
+                </ul>
+              </li>
+              <li class='dropdown-item dropdown'>
+                <a class='dropdown-toggle' id='SNR' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>SNR</a>
+                <ul class='dropdown-menu' aria-labelledby='SNR'>
+                </ul>
+              </li>
+              <li class='dropdown-item dropdown'>
+                <a class='dropdown-toggle' id='calibration' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>calibration</a>
+                <ul class='dropdown-menu' aria-labelledby='calibration'>
+                </ul>
+              </li>
+              <li class='dropdown-item dropdown'>
+                <a class='dropdown-toggle' id='energy' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>energy</a>
+                <ul class='dropdown-menu' aria-labelledby='energy'>
+                </ul>
+              </li>
+              <li class='dropdown-item dropdown'>
+                <a class='dropdown-toggle' id='others' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>others</a>
+                <ul class='dropdown-menu' aria-labelledby='others'>
+                  <li class='dropdown-item' href='#' onclick='grab_html("others_all", label="C01:SEOBNRv4PHM")'><a>others_all</a></li>
+                  <li class='dropdown-item' href='#' onclick='grab_html("phase", label="C01:SEOBNRv4PHM")'><a>phase</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        <li class='nav-item'>
+          <li class='nav-item dropdown'>
+            <a class='nav-link dropdown-toggle' href='#' id='navbarDropdown' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
+            Switch
+            </a>
+            <ul class='dropdown-menu' aria-labelledby='dropdown1'>
+              <li class='dropdown-item' href='#' onclick='grab_html("C01:IMRPhenomXPHM", label="switch")'><a>C01:IMRPhenomXPHM</a></li>
+              <li class='dropdown-item' href='#' onclick='grab_html("C01:Mixed", label="switch")'><a>C01:Mixed</a></li>
+              <li class='dropdown-item' href='#' onclick='grab_html("Comparison", label="switch")'><a>Comparison</a></li>
+            </ul>
+          </li>
+        <li class='nav-item'>
+          <li class='nav-item dropdown'>
+            <a class='nav-link dropdown-toggle' href='#' id='navbarDropdown' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
+            2d Histograms
+            </a>
+            <ul class='dropdown-menu' aria-labelledby='dropdown1'>
+              <li class='dropdown-item' href='#' onclick='grab_html("masses", label="C01:SEOBNRv4PHM")'><a>masses</a></li>
+              <li class='dropdown-item' href='#' onclick='grab_html("spins", label="C01:SEOBNRv4PHM")'><a>spins</a></li>
+              <li class='dropdown-item' href='#' onclick='grab_html("location", label="C01:SEOBNRv4PHM")'><a>location</a></li>
+            </ul>
+          </li>
+      </ul>
+    </div>
+    <div class='collapse navbar-collapse' id='collapsibleNavbar'>
+      <ul class='navbar-nav flex-row ml-md-auto d-none d-md-flex'style='margin-right:1em;'>
+  <a class='nav-link' href='#', onclick='grab_html("Downloads")'>Downloads</a>
+  <a class='nav-link' href='#', onclick='grab_html("About")'>About</a>
+      </ul>
+    </div>
+    <input type='text' placeholder='search' id='search'>
+    <button type='submit' onclick='myFunction()'>Search</button>
+</nav>
+  <div class='banner'>
+C01:SEOBNRv4PHM
+</div>
+  <div class='paragraph'>
+Below is the config file for C01:SEOBNRv4PHM
+</div>
+<div class='container' style='margin-top:3em; margin-bottom:5em; background-color:#FFFFFF; box-shadow: 0 0 5px grey; max-width: 1400px'>
+<div class="highlight"><pre><span></span><span class="k">[analysis]</span>
+<span class="na">coherence-test</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">False</span>
+<span class="na">engine</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>
+<span class="na">ifos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">[&#39;H1&#39;, &#39;L1&#39;, &#39;V1&#39;]</span>
+<span class="na">nparallel</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">4</span>
+<span class="na">osg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">False</span>
+<span class="na">roq</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">False</span>
+<span class="na">singularity</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">False</span>
+<span class="na">upload-to-gracedb</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">False</span>
+
+<span class="k">[condor]</span>
+<span class="na">accounting_group</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">ligo.prod.o3.cbc.pe.lalinference</span>
+<span class="na">accounting_group_user</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">daniel.williams</span>
+<span class="na">coherencetest</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">/cvmfs/oasis.opensciencegrid.org/ligo/sw/conda/envs/igwn-py38-20210107/bin/lalinference_coherence_test</span>
+<span class="na">combinePTMCMCh5script</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">/cvmfs/oasis.opensciencegrid.org/ligo/sw/conda/envs/igwn-py38-20210107/bin/cbcBayesCombinePTMCMCh5s</span>
+<span class="na">computeroqweights</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">/cvmfs/oasis.opensciencegrid.org/ligo/sw/conda/envs/igwn-py38-20210107/bin/lalinference_compute_roq_weights</span>
+<span class="na">datafind</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">/cvmfs/oasis.opensciencegrid.org/ligo/sw/conda/envs/igwn-py38-20210107/bin/gw_data_find</span>
+<span class="na">gracedb</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">/cvmfs/oasis.opensciencegrid.org/ligo/sw/conda/envs/igwn-py38-20210107/bin/gracedb</span>
+<span class="na">lalinferencebambi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">/cvmfs/oasis.opensciencegrid.org/ligo/sw/conda/envs/igwn-py38-20210107/bin/lalinference_bambi</span>
+<span class="na">lalinferencedatadump</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">/cvmfs/oasis.opensciencegrid.org/ligo/sw/conda/envs/igwn-py38-20210107/bin/lalinference_datadump</span>
+<span class="na">lalinferencemcmc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">/cvmfs/oasis.opensciencegrid.org/ligo/sw/conda/envs/igwn-py38-20210107/bin/lalinference_mcmc</span>
+<span class="na">lalinferencenest</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">/cvmfs/oasis.opensciencegrid.org/ligo/sw/conda/envs/igwn-py38-20210107/bin/lalinference_nest</span>
+<span class="na">lalsuite-install</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">/cvmfs/oasis.opensciencegrid.org/ligo/sw/conda/envs/igwn-py38-20210107</span>
+<span class="na">ligo-skymap-from-samples</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">/cvmfs/oasis.opensciencegrid.org/ligo/sw/conda/envs/igwn-py38-20210107/bin/ligo-skymap-from-samples</span>
+<span class="na">ligo-skymap-plot</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">/cvmfs/oasis.opensciencegrid.org/ligo/sw/conda/envs/igwn-py38-20210107/bin/ligo-skymap-plot</span>
+<span class="na">ligolw_print</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">/cvmfs/oasis.opensciencegrid.org/ligo/sw/conda/envs/igwn-py38-20210107/bin/ligolw_print</span>
+<span class="na">mergeMCMCscript</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">/cvmfs/oasis.opensciencegrid.org/ligo/sw/conda/envs/igwn-py38-20210107/bin/cbcBayesMCMC2pos</span>
+<span class="na">mergeNSscript</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">/cvmfs/oasis.opensciencegrid.org/ligo/sw/conda/envs/igwn-py38-20210107/bin/lalinference_nest2pos</span>
+<span class="na">mpirun</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">/cvmfs/oasis.opensciencegrid.org/ligo/sw/conda/envs/igwn-py38-20210107/bin/mpirun</span>
+<span class="na">mpiwrapper</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">/cvmfs/oasis.opensciencegrid.org/ligo/sw/conda/envs/igwn-py38-20210107/bin/lalinference_mpi_wrapper</span>
+<span class="na">pos_to_sim_inspiral</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">/cvmfs/oasis.opensciencegrid.org/ligo/sw/conda/envs/igwn-py38-20210107/bin/cbcBayesPosToSimInspiral</span>
+<span class="na">ppanalysis</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">/cvmfs/oasis.opensciencegrid.org/ligo/sw/conda/envs/igwn-py38-20210107/bin/cbcBayesPPAnalysis</span>
+<span class="na">processareas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">/cvmfs/oasis.opensciencegrid.org/ligo/sw/conda/envs/igwn-py38-20210107/bin/process_areas</span>
+<span class="na">resultspage</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">/cvmfs/oasis.opensciencegrid.org/ligo/sw/conda/envs/igwn-py38-20210107/bin/cbcBayesPostProc</span>
+<span class="na">segfind</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">/cvmfs/oasis.opensciencegrid.org/ligo/sw/conda/envs/igwn-py38-20210107/bin/ligolw_segment_query</span>
+
+<span class="k">[data]</span>
+<span class="na">channels</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">{&#39;H1&#39;: &#39;H1:DCH-CLEAN_STRAIN_C02&#39;,&#39;L1&#39;: &#39;L1:DCH-CLEAN_STRAIN_C02&#39;, &#39;V1&#39;: &#39;V1:Hrec_hoft_V1O2Repro2A_16384Hz&#39;}</span>
+
+<span class="k">[datafind]</span>
+<span class="na">types</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">{&#39;H1&#39;: &#39;H1_CLEANED_HOFT_C02&#39;, &#39;L1&#39;: &#39;L1_CLEANED_HOFT_C02&#39;, &#39;V1&#39;: &#39;V1O2Repro2A&#39;}</span>
+<span class="na">url-type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">file</span>
+
+<span class="k">[engine]</span>
+<span class="na">H1-psd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">/home/daniel.williams/events/O3/event_repos/GW170809/C01_offline/psds/2048/H1-psd.dat</span>
+<span class="na">H1-spcal-envelope</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">/home/daniel.williams/events/O3/event_repos/GW170809/C01_offline/calibration/H1.dat</span>
+<span class="na">L1-psd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">/home/daniel.williams/events/O3/event_repos/GW170809/C01_offline/psds/2048/L1-psd.dat</span>
+<span class="na">L1-spcal-envelope</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">/home/daniel.williams/events/O3/event_repos/GW170809/C01_offline/calibration/L1.dat</span>
+<span class="na">V1-psd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">/home/daniel.williams/events/O3/event_repos/GW170809/C01_offline/psds/2048/V1-psd.dat</span>
+<span class="na">V1-spcal-envelope</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">/home/daniel.williams/events/O3/event_repos/GW170809/C01_offline/calibration/V1.dat</span>
+<span class="na">a_spin1-max</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">0.99</span>
+<span class="na">a_spin2-max</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">0.99</span>
+<span class="na">adapt-temps</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>
+<span class="na">amporder</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">1</span>
+<span class="na">approx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">SEOBNRv4PHM</span>
+<span class="na">chirpmass-max</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">42.847349120548664</span>
+<span class="na">chirpmass-min</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">19.261625770194975</span>
+<span class="na">comp-max</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">1000</span>
+<span class="na">comp-min</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">1</span>
+<span class="na">distance-max</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">10000</span>
+<span class="na">enable-spline-calibration</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>
+<span class="na">fmin-template</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">13.333333333333334</span>
+<span class="na">fref</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">20</span>
+<span class="na">maxmcmc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">5000</span>
+<span class="na">neff</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">1000</span>
+<span class="na">nlive</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">2048</span>
+<span class="na">ntemps</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">8</span>
+<span class="na">progress</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>
+<span class="na">q-min</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">0.05</span>
+<span class="na">resume</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>
+<span class="na">seglen</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">4</span>
+<span class="na">spcal-nodes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">10</span>
+<span class="na">srate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">2048</span>
+<span class="na">tolerance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">0.1</span>
+
+<span class="k">[input]</span>
+<span class="na">analyse-all-time</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">False</span>
+<span class="na">events</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">all</span>
+<span class="na">gps-time-file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>
+<span class="na">ignore-gracedb-psd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">True</span>
+<span class="na">ignore-state-vector</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">True</span>
+<span class="na">max-psd-length</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">10000</span>
+<span class="na">minimum_realizations_number</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">8</span>
+<span class="na">padding</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">16</span>
+<span class="na">threshold-snr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">3</span>
+<span class="na">timeslides</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">False</span>
+
+<span class="k">[lalinference]</span>
+<span class="na">fhigh</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">{ &#39;H1&#39;: 896, &#39;L1&#39;: 896,  &#39;V1&#39;: 896  }</span>
+<span class="na">flow</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">{ &#39;H1&#39;: 20, &#39;L1&#39;: 20,  &#39;V1&#39;: 20  }</span>
+
+<span class="k">[ligo-skymap-from-samples]</span>
+<span class="na">enable-multiresolution</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>
+
+<span class="k">[ligo-skymap-plot]</span>
+<span class="na">annotate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>
+<span class="na">contour</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">50 90</span>
+
+<span class="k">[mpi]</span>
+<span class="na">machine-count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">8</span>
+<span class="na">machine-memory</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">4000</span>
+<span class="na">mpi_task_count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">8</span>
+
+<span class="k">[paths]</span>
+<span class="na">webdir</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">/home/pe.o3/public_html/LVC/o3a-final//GW170809/ProdF8</span>
+
+<span class="k">[resultspage]</span>
+<span class="na">deltaLogP</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">7.5</span>
+<span class="na">skyres</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">0.5</span>
+
+<span class="k">[skyarea]</span>
+<span class="na">maxpts</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">2000</span>
+
+<span class="k">[statevector]</span>
+<span class="na">bits</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">[&#39;Bit 0&#39;, &#39;Bit 1&#39;, &#39;Bit 2&#39;]</span>
+<span class="na">state-vector-channel</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">{&#39;H1&#39;: &#39;H1:GDS-CALIB_STATE_VECTOR_C01&#39;, &#39;L1&#39;: &#39;L1:GDS-CALIB_STATE_VECTOR_C01&#39;, &#39;V1&#39;: &#39;V1:DQ_ANALYSIS_STATE_VECTOR&#39;}</span>
+</pre></div>
+</div>
+  <div class='paragraph'>
+Below is the prior file for C01:SEOBNRv4PHM
+</div>
+<div class='container' style='margin-top:3em; margin-bottom:5em; background-color:#FFFFFF; box-shadow: 0 0 5px grey; max-width: 1400px'>
+<div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<script>
+  $(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip();
+  });
+</script>
+<div class='jumbotron' style='margin-bottom:0; line-height: 0.5;background-color:#989898; bottom:0; position:bottom;width:100%'>
+<div class='container'>
+  <div class='row'>
+    <div class='col-sm-4 icon-bar'>
+      <div class='icon'>
+<a href='https://git.ligo.org/lscsoft/pesummary/tree/v1.2.0' data-toggle='tooltip' title='View PESummary-v1.2.0'><i class='fa fa-code' style='font-size: 30px; color: #E8E8E8; font-weight: 900; padding-right:10px'></i></a>
+<a href='https://git.ligo.org/lscsoft/pesummary/issues' data-toggle='tooltip' title='Open an issue ticket'><i class='fa fa-ticket' style='font-size: 30px; color: #E8E8E8; font-weight: 900; padding-right:10px'></i></a>
+<a href='https://lscsoft.docs.ligo.org/pesummary/' data-toggle='tooltip' title='View the docs!'><i class='fa fa-book' style='font-size: 30px; color: #E8E8E8; font-weight: 900; padding-right:10px'></i></a>
+<a href='https://lscsoft.docs.ligo.org/pesummary/stable/tutorials/make_your_own_page_from_metafile.html' data-toggle='tooltip' title='Make your own page'><i class='fa fa-window-restore' style='font-size: 30px; color: #E8E8E8; font-weight: 900; padding-right:10px'></i></a>
+      </div>
+    </div>
+    <div class='col-sm-7'>
+<p style='color: #E8E8E8; font-weight: bold; font-family: arial-body; margin-top:14px'>This page was produced by vivien at 11:33 on November 26 2024</p>
+    </div>
+  </div>
+</div>
+</div>
