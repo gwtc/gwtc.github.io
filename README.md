@@ -4,7 +4,7 @@ Pages were obtained by running [pesummary](https://lscsoft.docs.ligo.org/pesumma
 ```python
 summarypageslw -w ./<event> -s <event url> --parameters mass_1 mass_2 chirp_mass total_mass mass_ratio mass_1_source mass_2_source chirp_mass_source total_mass_source a_1 a_2 tilt_1 tilt_2 chi_eff chi_p phi_1 phi_2 phi_12 phi_jl psi ra dec luminosity_distance redshift iota theta_jn geocent_time phase --disable_prior_sampling --disable_interactive --gw
 ```
-Note that all files larger than 50Mb have been removed, hence some links in the following pages may not work.
+Note that all sample files have been removed due to GitHub pages size constraints, hence links to datafiles in the following pages will not work.
 
 ## Events
 
