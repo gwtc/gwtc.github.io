@@ -1,6 +1,6 @@
 # GWTC
 ## Data
-Pages were obtained by running [pesummary](https://lscsoft.docs.ligo.org/pesummary/stable/index.html)'s [summarypageslw](https://lscsoft.docs.ligo.org/pesummary/stable/core/cli/summarypageslw.html) excecutable on all the events in the [GWTC2.1](https://zenodo.org/records/6513631) and [GWTC3](https://zenodo.org/records/8177023) datasets, and for GW170817 only on the [GWTC-1](https://dcc.ligo.org/LIGO-P1800370/public) dataset. The command line use was:
+Pages were obtained by running [pesummary](https://lscsoft.docs.ligo.org/pesummary/stable/index.html)'s [summarypageslw](https://lscsoft.docs.ligo.org/pesummary/stable/core/cli/summarypageslw.html) excecutable on all the events in the [GWTC2.1](https://zenodo.org/records/6513631) and [GWTC3](https://zenodo.org/records/8177023) datasets, and for GW170817 only on the [GWTC-1](https://dcc.ligo.org/LIGO-P1800370/public) dataset. The command line used was:
 ```python
 summarypageslw -w ./<event> -s <event url> --parameters mass_1 mass_2 chirp_mass total_mass mass_ratio mass_1_source mass_2_source chirp_mass_source total_mass_source a_1 a_2 tilt_1 tilt_2 chi_eff chi_p phi_1 phi_2 phi_12 phi_jl psi ra dec luminosity_distance redshift iota theta_jn geocent_time phase --disable_prior_sampling --disable_interactive --gw
 ```
