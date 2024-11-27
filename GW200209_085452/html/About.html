@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+  <title>Summary Pages</title>
+<!--
+                                    Made by
+            ____  ___________
+           / __ \/ ____/ ___/__  ______ ___  ____ ___  ____ ________  __
+          / /_/ / __/  \__ \/ / / / __ `__ \/ __ `__ \/ __ `/ ___/ / / /
+         / ____/ /___ ___/ / /_/ / / / / / / / / / / / /_/ / /  / /_/ /
+        /_/   /_____//____/\__,_/_/ /_/ /_/_/ /_/ /_/\__,_/_/   \__, /
+                                                               /____/
+
+                                   MIT License
+
+       PESummary was developed by Hoy et al. and source code can be seen
+       here: git.ligo.org/lscsoft/pesummary. If you wish to use PESummary
+   for your own work, please cite PESummary. The following page gives details
+   https://lscsoft.docs.ligo.org/pesummary/stable/citing_pesummary.html.
+                                     Thanks!
+  -->
+<html lang='en'>
+    <title>title</title>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css'>
+  <link rel='stylesheet' href='../css/About.css'>
+
+</head>
+<body style='background-color:#F8F8F8; margin-top:5em; min-height: 100%'>
+
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js'></script>
+    <script src='https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js'></script>
+    <script src='../js/combine_corner.js'></script>
+    <script src='../js/grab.js'></script>
+    <script src='../js/modal.js'></script>
+    <script src='../js/multi_dropbar.js'></script>
+    <script src='../js/multiple_posteriors.js'></script>
+    <script src='../js/search.js'></script>
+    <script src='../js/side_bar.js'></script>
+    <script src='../js/html_to_csv.js'></script>
+    <script src='../js/html_to_json.js'></script>
+    <script src='../js/html_to_shell.js'></script>
+    <script src='../js/expert.js'></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/navbar.css">
+    <link rel="stylesheet" href="../css/font.css">
+    <link rel="stylesheet" href="../css/table.css">
+    <link rel="stylesheet" href="../css/image_styles.css">
+    <link rel="stylesheet" href="../css/watermark.css">
+    <link rel="stylesheet" href="../css/toggle.css">
+
+<h7 hidden>None</h7>
+<h7 hidden>None</h7>
+<nav class='navbar navbar-expand-sm navbar-dark bg-dark fixed-top'>
+  <a class='navbar-brand' href='#' style='color: white'>Navbar</a>
+  <button class='navbar-toggler' type='button' data-toggle='collapse' data-target='#collapsibleNavbar'>
+    <span class='navbar-toggler-icon'></span>
+  </button>
+    <div class='collapse navbar-collapse' id='collapsibleNavbar'>
+      <ul class='navbar-nav'>
+        <li class='nav-item'>
+          <a class='nav-link' href='#' onclick='grab_html("home")'>home</a>
+        </li>
+        <li class='nav-item'>
+          <li class='nav-item dropdown'>
+            <a class='nav-link dropdown-toggle' href='#' id='navbarDropdown' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
+            Result Pages
+            </a>
+            <ul class='dropdown-menu' aria-labelledby='dropdown1'>
+              <li class='dropdown-item' href='#' onclick='grab_html("C01:IMRPhenomXPHM", label="C01:IMRPhenomXPHM")'><a>C01:IMRPhenomXPHM</a></li>
+              <li class='dropdown-item' href='#' onclick='grab_html("C01:Mixed", label="C01:Mixed")'><a>C01:Mixed</a></li>
+              <li class='dropdown-item' href='#' onclick='grab_html("C01:SEOBNRv4PHM", label="C01:SEOBNRv4PHM")'><a>C01:SEOBNRv4PHM</a></li>
+              <li class='dropdown-item' href='#' onclick='grab_html("Comparison")'><a>Comparison</a></li>
+            </ul>
+          </li>
+        <li class='nav-item'>
+          <a class='nav-link' href='#' onclick='grab_html("Logging")'>Logging</a>
+        </li>
+        <li class='nav-item'>
+          <a class='nav-link' href='#' onclick='grab_html("Version")'>Version</a>
+        </li>
+      </ul>
+    </div>
+    <div class='collapse navbar-collapse' id='collapsibleNavbar'>
+      <ul class='navbar-nav flex-row ml-md-auto d-none d-md-flex'style='margin-right:1em;'>
+  <a class='nav-link' href='#', onclick='grab_html("Downloads")'>Downloads</a>
+  <a class='nav-link' href='#', onclick='grab_html("About")'>About</a>
+      </ul>
+    </div>
+    <input type='text' placeholder='search' id='search'>
+    <button type='submit' onclick='myFunction()'>Search</button>
+</nav>
+  <div class='banner'>
+About
+</div>
+  <div class='paragraph'>
+Below is information about how these pages were generated
+</div>
+  <div class='banner' style='font-size: 26px;'>
+On the command-line
+</div>
+  <div class='paragraph'>
+This page was generated with the following command-line call from the directory /Users/vivien/Documents/Cardiff/teaching/projects/2024-2025/gwtc.github.io
+</div>
+<div class='container' style='margin-top:3em; margin-bottom:5em; background-color:#FFFFFF; box-shadow: 0 0 5px grey; max-width: 1400px'>
+<div class="highlight"><pre><span></span><span class="w"> </span>/Users/vivien/mambaforge/envs/sbigw/bin/summarypageslw<span class="w"> </span>
+-w<span class="w"> </span>./GW200209_085452<span class="w"> </span>
+-s<span class="w"> </span>https://zenodo.org/records/8177023/files/IGWN-GWTC3p0-v2-GW200209_085452_PEDataRelease_mixed_cosmo.h5<span class="w"> </span>
+--parameters<span class="w"> </span>mass_1<span class="w"> </span>mass_2<span class="w"> </span>chirp_mass<span class="w"> </span>total_mass<span class="w"> </span>mass_ratio<span class="w"> </span>mass_1_source<span class="w"> </span>mass_2_source<span class="w"> </span>chirp_mass_source<span class="w"> </span>total_mass_source<span class="w"> </span>a_1<span class="w"> </span>a_2<span class="w"> </span>tilt_1<span class="w"> </span>tilt_2<span class="w"> </span>chi_eff<span class="w"> </span>chi_p<span class="w"> </span>phi_1<span class="w"> </span>phi_2<span class="w"> </span>phi_12<span class="w"> </span>phi_jl<span class="w"> </span>psi<span class="w"> </span>ra<span class="w"> </span>dec<span class="w"> </span>luminosity_distance<span class="w"> </span>redshift<span class="w"> </span>iota<span class="w"> </span>theta_jn<span class="w"> </span>geocent_time<span class="w"> </span>phase<span class="w"> </span>
+--disable_prior_sampling<span class="w"> </span>
+--disable_interactive<span class="w"> </span>
+--gw
+</pre></div>
+</div>
+<div class='container' style='margin-top:-4em; margin-bottom:5em; max-width: 1400px'>
+<button type='button' onclick='export_table_to_shell("pesummary.sh")' style='margin-left: 0em; margin-bottom: 0.5em' class='btn btn-outline-secondary btn-table'>Export to bash</button>
+</div>
+<script>
+  $(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip();
+  });
+</script>
+<div class='container' style='bottom: 0px; top: 0px; min-height: 100%; left: 0; right: 0;min-width: 100%; padding-left: 0px; padding-right: 0px'>
+<div class='jumbotron' style='margin-bottom:0; line-height: 0.5;background-color:#989898; bottom:0; position:absolute;width:100%'>
+<div class='container'>
+  <div class='row'>
+    <div class='col-sm-4 icon-bar'>
+      <div class='icon'>
+<a href='https://git.ligo.org/lscsoft/pesummary/tree/v1.3.2' data-toggle='tooltip' title='View PESummary-v1.3.2'><i class='fa fa-code' style='font-size: 30px; color: #E8E8E8; font-weight: 900; padding-right:10px'></i></a>
+<a href='https://git.ligo.org/lscsoft/pesummary/issues' data-toggle='tooltip' title='Open an issue ticket'><i class='fa fa-ticket' style='font-size: 30px; color: #E8E8E8; font-weight: 900; padding-right:10px'></i></a>
+<a href='https://lscsoft.docs.ligo.org/pesummary/' data-toggle='tooltip' title='View the docs!'><i class='fa fa-book' style='font-size: 30px; color: #E8E8E8; font-weight: 900; padding-right:10px'></i></a>
+<a href='https://lscsoft.docs.ligo.org/pesummary/stable/tutorials/make_your_own_page_from_metafile.html' data-toggle='tooltip' title='Make your own page'><i class='fa fa-window-restore' style='font-size: 30px; color: #E8E8E8; font-weight: 900; padding-right:10px'></i></a>
+      </div>
+    </div>
+    <div class='col-sm-7'>
+<p style='color: #E8E8E8; font-weight: bold; font-family: arial-body; margin-top:14px'>This page was produced by vivien at 14:36 on November 26 2024</p>
+    </div>
+  </div>
+</div>
+</div>
+</div>

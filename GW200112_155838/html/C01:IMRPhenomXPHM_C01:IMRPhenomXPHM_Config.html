@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+  <title>Summary Pages</title>
+<!--
+                                    Made by
+            ____  ___________
+           / __ \/ ____/ ___/__  ______ ___  ____ ___  ____ ________  __
+          / /_/ / __/  \__ \/ / / / __ `__ \/ __ `__ \/ __ `/ ___/ / / /
+         / ____/ /___ ___/ / /_/ / / / / / / / / / / / /_/ / /  / /_/ /
+        /_/   /_____//____/\__,_/_/ /_/ /_/_/ /_/ /_/\__,_/_/   \__, /
+                                                               /____/
+
+                                   MIT License
+
+       PESummary was developed by Hoy et al. and source code can be seen
+       here: git.ligo.org/lscsoft/pesummary. If you wish to use PESummary
+   for your own work, please cite PESummary. The following page gives details
+   https://lscsoft.docs.ligo.org/pesummary/stable/citing_pesummary.html.
+                                     Thanks!
+  -->
+<html lang='en'>
+    <title>title</title>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css'>
+  <link rel='stylesheet' href='../css/C01:IMRPhenomXPHM_C01:IMRPhenomXPHM_Config.css'>
+  <link rel='stylesheet' href='../css/C01:Mixed_C01:Mixed_Config.css'>
+  <link rel='stylesheet' href='../css/C01:SEOBNRv4PHM_C01:SEOBNRv4PHM_Config.css'>
+
+</head>
+<body style='background-color:#F8F8F8; margin-top:5em; min-height: 100%'>
+
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js'></script>
+    <script src='https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js'></script>
+    <script src='../js/combine_corner.js'></script>
+    <script src='../js/grab.js'></script>
+    <script src='../js/modal.js'></script>
+    <script src='../js/multi_dropbar.js'></script>
+    <script src='../js/multiple_posteriors.js'></script>
+    <script src='../js/search.js'></script>
+    <script src='../js/side_bar.js'></script>
+    <script src='../js/html_to_csv.js'></script>
+    <script src='../js/html_to_json.js'></script>
+    <script src='../js/html_to_shell.js'></script>
+    <script src='../js/expert.js'></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/navbar.css">
+    <link rel="stylesheet" href="../css/font.css">
+    <link rel="stylesheet" href="../css/table.css">
+    <link rel="stylesheet" href="../css/image_styles.css">
+    <link rel="stylesheet" href="../css/watermark.css">
+    <link rel="stylesheet" href="../css/toggle.css">
+
+<h7 hidden>C01:IMRPhenomXPHM</h7>
+<h7 hidden>C01:IMRPhenomXPHM</h7>
+<nav class='navbar navbar-expand-sm fixed-top navbar-custom' style='background-color: #0173b2'>
+  <a class='navbar-brand' href='#' style='color: white'>Navbar</a>
+  <button class='navbar-toggler' type='button' data-toggle='collapse' data-target='#collapsibleNavbar'>
+    <span class='navbar-toggler-icon'></span>
+  </button>
+    <div class='collapse navbar-collapse' id='collapsibleNavbar'>
+      <ul class='navbar-nav'>
+        <li class='nav-item'>
+          <a class='nav-link' href='#' onclick='grab_html("home")'>home</a>
+        </li>
+        <li class='nav-item'>
+          <li class='nav-item dropdown'>
+            <a class='nav-link dropdown-toggle' href='#' id='navbarDropdown' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
+            Result Pages
+            </a>
+            <ul class='dropdown-menu' aria-labelledby='dropdown1'>
+              <li class='dropdown-item' href='#' onclick='grab_html("C01:IMRPhenomXPHM", label="C01:IMRPhenomXPHM")'><a>C01:IMRPhenomXPHM</a></li>
+              <li class='dropdown-item' href='#' onclick='grab_html("C01:Mixed", label="C01:Mixed")'><a>C01:Mixed</a></li>
+              <li class='dropdown-item' href='#' onclick='grab_html("C01:SEOBNRv4PHM", label="C01:SEOBNRv4PHM")'><a>C01:SEOBNRv4PHM</a></li>
+              <li class='dropdown-item' href='#' onclick='grab_html("Comparison")'><a>Comparison</a></li>
+            </ul>
+          </li>
+        <li class='nav-item'>
+          <a class='nav-link' href='#' onclick='grab_html("Corner", label="C01:IMRPhenomXPHM")'>Corner</a>
+        </li>
+        <li class='nav-item'>
+          <a class='nav-link' href='#' onclick='grab_html("Config", label="C01:IMRPhenomXPHM")'>Config</a>
+        </li>
+        <li class='nav-item'>
+          <li class='nav-item dropdown'>
+            <a class='nav-link dropdown-toggle' href='#' id='navbarDropdown' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
+            1d Histograms
+            </a>
+            <ul class='dropdown-menu' aria-labelledby='dropdown1'>
+              <li class='dropdown-item' href='#' onclick='grab_html("Custom", label="C01:IMRPhenomXPHM")'><a>Custom</a></li>
+              <li class='dropdown-item' href='#' onclick='grab_html("All", label="C01:IMRPhenomXPHM")'><a>All</a></li>
+              <li class='dropdown-item dropdown'>
+                <a class='dropdown-toggle' id='masses' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>masses</a>
+                <ul class='dropdown-menu' aria-labelledby='masses'>
+                  <li class='dropdown-item' href='#' onclick='grab_html("masses_all", label="C01:IMRPhenomXPHM")'><a>masses_all</a></li>
+                  <li class='dropdown-item' href='#' onclick='grab_html("chirp_mass", label="C01:IMRPhenomXPHM")'><a>chirp_mass</a></li>
+                  <li class='dropdown-item' href='#' onclick='grab_html("mass_1", label="C01:IMRPhenomXPHM")'><a>mass_1</a></li>
+                  <li class='dropdown-item' href='#' onclick='grab_html("mass_2", label="C01:IMRPhenomXPHM")'><a>mass_2</a></li>
+                  <li class='dropdown-item' href='#' onclick='grab_html("mass_ratio", label="C01:IMRPhenomXPHM")'><a>mass_ratio</a></li>
+                  <li class='dropdown-item' href='#' onclick='grab_html("total_mass", label="C01:IMRPhenomXPHM")'><a>total_mass</a></li>
+                </ul>
+              </li>
+              <li class='dropdown-item dropdown'>
+                <a class='dropdown-toggle' id='source' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>source</a>
+                <ul class='dropdown-menu' aria-labelledby='source'>
+                  <li class='dropdown-item' href='#' onclick='grab_html("source_all", label="C01:IMRPhenomXPHM")'><a>source_all</a></li>
+                  <li class='dropdown-item' href='#' onclick='grab_html("chirp_mass_source", label="C01:IMRPhenomXPHM")'><a>chirp_mass_source</a></li>
+                  <li class='dropdown-item' href='#' onclick='grab_html("mass_1_source", label="C01:IMRPhenomXPHM")'><a>mass_1_source</a></li>
+                  <li class='dropdown-item' href='#' onclick='grab_html("mass_2_source", label="C01:IMRPhenomXPHM")'><a>mass_2_source</a></li>
+                  <li class='dropdown-item' href='#' onclick='grab_html("total_mass_source", label="C01:IMRPhenomXPHM")'><a>total_mass_source</a></li>
+                </ul>
+              </li>
+              <li class='dropdown-item dropdown'>
+                <a class='dropdown-toggle' id='remnant' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>remnant</a>
+                <ul class='dropdown-menu' aria-labelledby='remnant'>
+                </ul>
+              </li>
+              <li class='dropdown-item dropdown'>
+                <a class='dropdown-toggle' id='inclination' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>inclination</a>
+                <ul class='dropdown-menu' aria-labelledby='inclination'>
+                  <li class='dropdown-item' href='#' onclick='grab_html("inclination_all", label="C01:IMRPhenomXPHM")'><a>inclination_all</a></li>
+                  <li class='dropdown-item' href='#' onclick='grab_html("iota", label="C01:IMRPhenomXPHM")'><a>iota</a></li>
+                  <li class='dropdown-item' href='#' onclick='grab_html("theta_jn", label="C01:IMRPhenomXPHM")'><a>theta_jn</a></li>
+                </ul>
+              </li>
+              <li class='dropdown-item dropdown'>
+                <a class='dropdown-toggle' id='spins' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>spins</a>
+                <ul class='dropdown-menu' aria-labelledby='spins'>
+                  <li class='dropdown-item' href='#' onclick='grab_html("spins_all", label="C01:IMRPhenomXPHM")'><a>spins_all</a></li>
+                  <li class='dropdown-item' href='#' onclick='grab_html("a_1", label="C01:IMRPhenomXPHM")'><a>a_1</a></li>
+                  <li class='dropdown-item' href='#' onclick='grab_html("a_2", label="C01:IMRPhenomXPHM")'><a>a_2</a></li>
+                  <li class='dropdown-item' href='#' onclick='grab_html("chi_eff", label="C01:IMRPhenomXPHM")'><a>chi_eff</a></li>
+                  <li class='dropdown-item' href='#' onclick='grab_html("chi_p", label="C01:IMRPhenomXPHM")'><a>chi_p</a></li>
+                </ul>
+              </li>
+              <li class='dropdown-item dropdown'>
+                <a class='dropdown-toggle' id='spin_angles' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>spin_angles</a>
+                <ul class='dropdown-menu' aria-labelledby='spin_angles'>
+                  <li class='dropdown-item' href='#' onclick='grab_html("spin_angles_all", label="C01:IMRPhenomXPHM")'><a>spin_angles_all</a></li>
+                  <li class='dropdown-item' href='#' onclick='grab_html("phi_1", label="C01:IMRPhenomXPHM")'><a>phi_1</a></li>
+                  <li class='dropdown-item' href='#' onclick='grab_html("phi_12", label="C01:IMRPhenomXPHM")'><a>phi_12</a></li>
+                  <li class='dropdown-item' href='#' onclick='grab_html("phi_2", label="C01:IMRPhenomXPHM")'><a>phi_2</a></li>
+                  <li class='dropdown-item' href='#' onclick='grab_html("phi_jl", label="C01:IMRPhenomXPHM")'><a>phi_jl</a></li>
+                  <li class='dropdown-item' href='#' onclick='grab_html("tilt_1", label="C01:IMRPhenomXPHM")'><a>tilt_1</a></li>
+                  <li class='dropdown-item' href='#' onclick='grab_html("tilt_2", label="C01:IMRPhenomXPHM")'><a>tilt_2</a></li>
+                </ul>
+              </li>
+              <li class='dropdown-item dropdown'>
+                <a class='dropdown-toggle' id='tidal' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>tidal</a>
+                <ul class='dropdown-menu' aria-labelledby='tidal'>
+                </ul>
+              </li>
+              <li class='dropdown-item dropdown'>
+                <a class='dropdown-toggle' id='location' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>location</a>
+                <ul class='dropdown-menu' aria-labelledby='location'>
+                  <li class='dropdown-item' href='#' onclick='grab_html("location_all", label="C01:IMRPhenomXPHM")'><a>location_all</a></li>
+                  <li class='dropdown-item' href='#' onclick='grab_html("dec", label="C01:IMRPhenomXPHM")'><a>dec</a></li>
+                  <li class='dropdown-item' href='#' onclick='grab_html("luminosity_distance", label="C01:IMRPhenomXPHM")'><a>luminosity_distance</a></li>
+                  <li class='dropdown-item' href='#' onclick='grab_html("psi", label="C01:IMRPhenomXPHM")'><a>psi</a></li>
+                  <li class='dropdown-item' href='#' onclick='grab_html("ra", label="C01:IMRPhenomXPHM")'><a>ra</a></li>
+                  <li class='dropdown-item' href='#' onclick='grab_html("redshift", label="C01:IMRPhenomXPHM")'><a>redshift</a></li>
+                </ul>
+              </li>
+              <li class='dropdown-item dropdown'>
+                <a class='dropdown-toggle' id='timings' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>timings</a>
+                <ul class='dropdown-menu' aria-labelledby='timings'>
+                  <li class='dropdown-item' href='#' onclick='grab_html("timings_all", label="C01:IMRPhenomXPHM")'><a>timings_all</a></li>
+                  <li class='dropdown-item' href='#' onclick='grab_html("geocent_time", label="C01:IMRPhenomXPHM")'><a>geocent_time</a></li>
+                </ul>
+              </li>
+              <li class='dropdown-item dropdown'>
+                <a class='dropdown-toggle' id='SNR' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>SNR</a>
+                <ul class='dropdown-menu' aria-labelledby='SNR'>
+                </ul>
+              </li>
+              <li class='dropdown-item dropdown'>
+                <a class='dropdown-toggle' id='calibration' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>calibration</a>
+                <ul class='dropdown-menu' aria-labelledby='calibration'>
+                </ul>
+              </li>
+              <li class='dropdown-item dropdown'>
+                <a class='dropdown-toggle' id='energy' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>energy</a>
+                <ul class='dropdown-menu' aria-labelledby='energy'>
+                </ul>
+              </li>
+              <li class='dropdown-item dropdown'>
+                <a class='dropdown-toggle' id='others' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>others</a>
+                <ul class='dropdown-menu' aria-labelledby='others'>
+                  <li class='dropdown-item' href='#' onclick='grab_html("others_all", label="C01:IMRPhenomXPHM")'><a>others_all</a></li>
+                  <li class='dropdown-item' href='#' onclick='grab_html("phase", label="C01:IMRPhenomXPHM")'><a>phase</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        <li class='nav-item'>
+          <li class='nav-item dropdown'>
+            <a class='nav-link dropdown-toggle' href='#' id='navbarDropdown' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
+            Switch
+            </a>
+            <ul class='dropdown-menu' aria-labelledby='dropdown1'>
+              <li class='dropdown-item' href='#' onclick='grab_html("C01:Mixed", label="switch")'><a>C01:Mixed</a></li>
+              <li class='dropdown-item' href='#' onclick='grab_html("C01:SEOBNRv4PHM", label="switch")'><a>C01:SEOBNRv4PHM</a></li>
+              <li class='dropdown-item' href='#' onclick='grab_html("Comparison", label="switch")'><a>Comparison</a></li>
+            </ul>
+          </li>
+        <li class='nav-item'>
+          <li class='nav-item dropdown'>
+            <a class='nav-link dropdown-toggle' href='#' id='navbarDropdown' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
+            2d Histograms
+            </a>
+            <ul class='dropdown-menu' aria-labelledby='dropdown1'>
+              <li class='dropdown-item' href='#' onclick='grab_html("masses", label="C01:IMRPhenomXPHM")'><a>masses</a></li>
+              <li class='dropdown-item' href='#' onclick='grab_html("spins", label="C01:IMRPhenomXPHM")'><a>spins</a></li>
+              <li class='dropdown-item' href='#' onclick='grab_html("location", label="C01:IMRPhenomXPHM")'><a>location</a></li>
+              <li class='dropdown-item' href='#' onclick='grab_html("timings", label="C01:IMRPhenomXPHM")'><a>timings</a></li>
+            </ul>
+          </li>
+        <li class='nav-item'>
+          <a class='nav-link' href='#' onclick='grab_html("Classification", label="C01:IMRPhenomXPHM")'>Classification</a>
+        </li>
+      </ul>
+    </div>
+    <div class='collapse navbar-collapse' id='collapsibleNavbar'>
+      <ul class='navbar-nav flex-row ml-md-auto d-none d-md-flex'style='margin-right:1em;'>
+  <a class='nav-link' href='#', onclick='grab_html("Downloads")'>Downloads</a>
+  <a class='nav-link' href='#', onclick='grab_html("About")'>About</a>
+      </ul>
+    </div>
+    <input type='text' placeholder='search' id='search'>
+    <button type='submit' onclick='myFunction()'>Search</button>
+</nav>
+  <div class='banner'>
+C01:IMRPhenomXPHM
+</div>
+  <div class='paragraph'>
+Below is the config file for C01:IMRPhenomXPHM
+</div>
+<div class='container' style='margin-top:3em; margin-bottom:5em; background-color:#FFFFFF; box-shadow: 0 0 5px grey; max-width: 1400px'>
+<div class="highlight"><pre><span></span><span class="k">[config]</span>
+<span class="na">accounting</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">ligo.prod.o3.cbc.pe.lalinference</span>
+<span class="na">calibration-model</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">CubicSpline</span>
+<span class="na">catch-waveform-errors</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">True</span>
+<span class="na">channel-dict</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">{  L1:DCS-CALIB_STRAIN_CLEAN_SUB60HZ_C01,V1:Hrec_hoft_16384Hz }</span>
+<span class="na">coherence-test</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">False</span>
+<span class="na">convert-to-flat-in-component-mass</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">False</span>
+<span class="na">create-plots</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">True</span>
+<span class="na">create-summary</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">False</span>
+<span class="na">data-dict</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">None</span>
+<span class="na">data-format</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">None</span>
+<span class="na">deltaT</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">0.2</span>
+<span class="na">detectors</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">[&#39;L1&#39;, &#39;V1&#39;]</span>
+<span class="na">distance-marginalization</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">True</span>
+<span class="na">distance-marginalization-lookup-table</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">TD.npz</span>
+<span class="na">duration</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">4</span>
+<span class="na">email</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">None</span>
+<span class="na">existing-dir</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">None</span>
+<span class="na">extra-likelihood-kwargs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">None</span>
+<span class="na">frequency-domain-source-model</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">lal_binary_black_hole</span>
+<span class="na">gaussian-noise</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">False</span>
+<span class="na">generation-seed</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">None</span>
+<span class="na">gps-file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">None</span>
+<span class="na">gps-tuple</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">None</span>
+<span class="na">ignore-gwpy-data-quality-check</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">True</span>
+<span class="na">injection</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">False</span>
+<span class="na">injection-dict</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">None</span>
+<span class="na">injection-file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">None</span>
+<span class="na">injection-numbers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">None</span>
+<span class="na">injection-waveform-approximant</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">None</span>
+<span class="na">jitter-time</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">True</span>
+<span class="na">label</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">Prod8</span>
+<span class="na">likelihood-type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">GravitationalWaveTransient</span>
+<span class="na">local</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">False</span>
+<span class="na">local-generation</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">False</span>
+<span class="na">local-plot</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">False</span>
+<span class="na">log-directory</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">None</span>
+<span class="na">maximum-frequency</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">{  &#39;L1&#39;: 896,  &#39;V1&#39;: 896  }</span>
+<span class="na">minimum-frequency</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">{  &#39;L1&#39;: 20,  &#39;V1&#39;: 20  }</span>
+<span class="na">n-parallel</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">4</span>
+<span class="na">n-simulation</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">0</span>
+<span class="na">online-pe</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">False</span>
+<span class="na">osg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">False</span>
+<span class="na">outdir</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">/home/daniel.williams/events/O3/o3b/run_directories/S200112a/Prod8</span>
+<span class="na">periodic-restart-time</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">28800</span>
+<span class="na">phase-marginalization</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">False</span>
+<span class="na">plot-calibration</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">False</span>
+<span class="na">plot-corner</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">False</span>
+<span class="na">plot-format</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">png</span>
+<span class="na">plot-marginal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">False</span>
+<span class="na">plot-skymap</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">False</span>
+<span class="na">plot-waveform</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">False</span>
+<span class="na">pn-amplitude-order</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">1</span>
+<span class="na">pn-phase-order</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">-1</span>
+<span class="na">pn-spin-order</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">-1</span>
+<span class="na">pn-tidal-order</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">-1</span>
+<span class="na">post-trigger-duration</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">2.0</span>
+<span class="na">postprocessing-arguments</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">None</span>
+<span class="na">postprocessing-executable</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">None</span>
+<span class="na">prior-file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">./Prod8.prior</span>
+<span class="na">psd-dict</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">{  L1:/home/daniel.williams/events/O3/event_repos/S200112a/C01_offline/psds/2048/L1-psd.dat, V1:/home/daniel.williams/events/O3/event_repos/S200112a/C01_offline/psds/2048/V1-psd.dat }</span>
+<span class="na">psd-fractional-overlap</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">0.5</span>
+<span class="na">psd-length</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">4</span>
+<span class="na">psd-maximum-duration</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">1024</span>
+<span class="na">psd-method</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">median</span>
+<span class="na">psd-start-time</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">None</span>
+<span class="na">reference-frame</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">L1V1</span>
+<span class="na">reference-frequency</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">20.0</span>
+<span class="na">request-cpus</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">16</span>
+<span class="na">request-memory</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">8.0</span>
+<span class="na">request-memory-generation</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">None</span>
+<span class="na">resampling-method</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">lal</span>
+<span class="na">roq-folder</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">None</span>
+<span class="na">roq-scale-factor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">1</span>
+<span class="na">sampler</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">dynesty</span>
+<span class="na">sampler-kwargs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">{&#39;nlive&#39;: 2000, &#39;sample&#39;: &#39;rwalk&#39;, &#39;walks&#39;: 100, &#39;nact&#39;: 50, &#39;check_point_delta_t&#39;:1800, &#39;check_point_plot&#39;:True}</span>
+<span class="na">sampling-frequency</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">2048</span>
+<span class="na">sampling-seed</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">None</span>
+<span class="na">scheduler</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">condor</span>
+<span class="na">scheduler-args</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">None</span>
+<span class="na">scheduler-env</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">None</span>
+<span class="na">scheduler-module</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">None</span>
+<span class="na">single-postprocessing-arguments</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">None</span>
+<span class="na">single-postprocessing-executable</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">None</span>
+<span class="na">singularity-image</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">None</span>
+<span class="na">spline-calibration-amplitude-uncertainty-dict</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">None</span>
+<span class="na">spline-calibration-envelope-dict</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">{ L1:/home/daniel.williams/events/O3/event_repos/S200112a/C01_offline/calibration/L1.dat,V1:/home/daniel.williams/events/O3/event_repos/S200112a/C01_offline/calibration/V1.dat }</span>
+<span class="na">spline-calibration-nodes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">10</span>
+<span class="na">spline-calibration-phase-uncertainty-dict</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">None</span>
+<span class="na">summarypages-arguments</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">None</span>
+<span class="na">time-marginalization</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">True</span>
+<span class="na">time-reference</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">geocent</span>
+<span class="na">timeslide-dict</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">None</span>
+<span class="na">timeslide-file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">None</span>
+<span class="na">transfer-files</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">False</span>
+<span class="na">trigger-time</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">1262879936.090936</span>
+<span class="na">tukey-roll-off</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">0.4</span>
+<span class="na">waveform-approximant</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">IMRPhenomXPHM</span>
+<span class="na">waveform-generator</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">bilby.gw.waveform_generator.WaveformGenerator</span>
+<span class="na">webdir</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">/home/pe.o3/public_html/LVC/o3b-catalog//S200112a/Prod8</span>
+<span class="na">zero-noise</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">False</span>
+</pre></div>
+</div>
+  <div class='paragraph'>
+Below is the prior file for C01:IMRPhenomXPHM
+</div>
+<div class='container' style='margin-top:3em; margin-bottom:5em; background-color:#FFFFFF; box-shadow: 0 0 5px grey; max-width: 1400px'>
+<div class="highlight"><pre><span></span><span class="na">a_1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">Uniform(minimum=0, maximum=0.99, name=&#39;a_1&#39;, latex_label=&#39;$a_1$&#39;, unit=None, boundary=None)</span>
+<span class="na">a_2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">Uniform(minimum=0, maximum=0.99, name=&#39;a_2&#39;, latex_label=&#39;$a_2$&#39;, unit=None, boundary=None)</span>
+<span class="na">azimuth</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">Uniform(minimum=0, maximum=6.283185307179586, name=None, latex_label=&#39;$\\epsilon$&#39;, unit=None, boundary=&#39;periodic&#39;)</span>
+<span class="na">chirp_mass</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">UniformInComponentsChirpMass(minimum=21.275516633130586, maximum=49.397749135513735, name=&#39;chirp_mass&#39;, latex_label=&#39;$\\mathcal{M}$&#39;, unit=&#39;$M_{\\odot}$&#39;, boundary=None)</span>
+<span class="na">geocent_time</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">Uniform(minimum=1262879935.990936, maximum=1262879936.1909359, name=&#39;geocent_time&#39;, latex_label=&#39;$t_c$&#39;, unit=&#39;$s$&#39;, boundary=None)</span>
+<span class="na">luminosity_distance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">PowerLaw(alpha=2, minimum=100, maximum=10000, name=&#39;luminosity_distance&#39;, latex_label=&#39;$d_L$&#39;, unit=&#39;Mpc&#39;, boundary=None)</span>
+<span class="na">mass_1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">Constraint(minimum=1, maximum=1000, name=&#39;mass_1&#39;, latex_label=&#39;$m_1$&#39;, unit=None)</span>
+<span class="na">mass_2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">Constraint(minimum=1, maximum=1000, name=&#39;mass_2&#39;, latex_label=&#39;$m_2$&#39;, unit=None)</span>
+<span class="na">mass_ratio</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">UniformInComponentsMassRatio(minimum=0.05, maximum=1.0, name=&#39;mass_ratio&#39;, latex_label=&#39;$q$&#39;, unit=None, boundary=None)</span>
+<span class="na">phase</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">Uniform(minimum=0, maximum=6.283185307179586, name=&#39;phase&#39;, latex_label=&#39;$\\phi$&#39;, unit=None, boundary=&#39;periodic&#39;)</span>
+<span class="na">phi_12</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">Uniform(minimum=0, maximum=6.283185307179586, name=&#39;phi_12&#39;, latex_label=&#39;$\\Delta\\phi$&#39;, unit=None, boundary=&#39;periodic&#39;)</span>
+<span class="na">phi_jl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">Uniform(minimum=0, maximum=6.283185307179586, name=&#39;phi_jl&#39;, latex_label=&#39;$\\phi_{JL}$&#39;, unit=None, boundary=&#39;periodic&#39;)</span>
+<span class="na">psi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">Uniform(minimum=0, maximum=3.141592653589793, name=&#39;psi&#39;, latex_label=&#39;$\\psi$&#39;, unit=None, boundary=&#39;periodic&#39;)</span>
+<span class="na">recalib_L1_amplitude_0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">Gaussian(mu=-0.004840411149340234, sigma=0.0426348400458223, name=&#39;recalib_L1_amplitude_0&#39;, latex_label=&#39;$A^L1_0$&#39;, unit=None, boundary=&#39;reflective&#39;)</span>
+<span class="na">recalib_L1_amplitude_1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">Gaussian(mu=0.003382931153398573, sigma=0.05115725264527914, name=&#39;recalib_L1_amplitude_1&#39;, latex_label=&#39;$A^L1_1$&#39;, unit=None, boundary=&#39;reflective&#39;)</span>
+<span class="na">recalib_L1_amplitude_2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">Gaussian(mu=-0.003109961110663667, sigma=0.08710849184127736, name=&#39;recalib_L1_amplitude_2&#39;, latex_label=&#39;$A^L1_2$&#39;, unit=None, boundary=&#39;reflective&#39;)</span>
+<span class="na">recalib_L1_amplitude_3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">Gaussian(mu=0.0017880682010422636, sigma=0.02438997202609435, name=&#39;recalib_L1_amplitude_3&#39;, latex_label=&#39;$A^L1_3$&#39;, unit=None, boundary=&#39;reflective&#39;)</span>
+<span class="na">recalib_L1_amplitude_4</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">Gaussian(mu=-0.0016581716586984163, sigma=0.012689954785950709, name=&#39;recalib_L1_amplitude_4&#39;, latex_label=&#39;$A^L1_4$&#39;, unit=None, boundary=&#39;reflective&#39;)</span>
+<span class="na">recalib_L1_amplitude_5</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">Gaussian(mu=-0.005728777070263738, sigma=0.024235076802918764, name=&#39;recalib_L1_amplitude_5&#39;, latex_label=&#39;$A^L1_5$&#39;, unit=None, boundary=&#39;reflective&#39;)</span>
+<span class="na">recalib_L1_amplitude_6</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">Gaussian(mu=-0.002388371796770894, sigma=0.02074350446856067, name=&#39;recalib_L1_amplitude_6&#39;, latex_label=&#39;$A^L1_6$&#39;, unit=None, boundary=&#39;reflective&#39;)</span>
+<span class="na">recalib_L1_amplitude_7</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">Gaussian(mu=-0.0025636209394214243, sigma=0.014318579270776998, name=&#39;recalib_L1_amplitude_7&#39;, latex_label=&#39;$A^L1_7$&#39;, unit=None, boundary=&#39;reflective&#39;)</span>
+<span class="na">recalib_L1_amplitude_8</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">Gaussian(mu=-0.00018144439447257256, sigma=0.011483058385048298, name=&#39;recalib_L1_amplitude_8&#39;, latex_label=&#39;$A^L1_8$&#39;, unit=None, boundary=&#39;reflective&#39;)</span>
+<span class="na">recalib_L1_amplitude_9</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">Gaussian(mu=0.003141865161244745, sigma=0.01356579180093047, name=&#39;recalib_L1_amplitude_9&#39;, latex_label=&#39;$A^L1_9$&#39;, unit=None, boundary=&#39;reflective&#39;)</span>
+<span class="na">recalib_L1_frequency_0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">DeltaFunction(peak=19.999999999999996, name=&#39;recalib_L1_frequency_0&#39;, latex_label=&#39;$f^L1_0$&#39;, unit=None)</span>
+<span class="na">recalib_L1_frequency_1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">DeltaFunction(peak=30.514434824844255, name=&#39;recalib_L1_frequency_1&#39;, latex_label=&#39;$f^L1_1$&#39;, unit=None)</span>
+<span class="na">recalib_L1_frequency_2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">DeltaFunction(peak=46.55653663398341, name=&#39;recalib_L1_frequency_2&#39;, latex_label=&#39;$f^L1_2$&#39;, unit=None)</span>
+<span class="na">recalib_L1_frequency_3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">DeltaFunction(peak=71.03232013940804, name=&#39;recalib_L1_frequency_3&#39;, latex_label=&#39;$f^L1_3$&#39;, unit=None)</span>
+<span class="na">recalib_L1_frequency_4</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">DeltaFunction(peak=108.37555516757195, name=&#39;recalib_L1_frequency_4&#39;, latex_label=&#39;$f^L1_4$&#39;, unit=None)</span>
+<span class="na">recalib_L1_frequency_5</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">DeltaFunction(peak=165.35094073835938, name=&#39;recalib_L1_frequency_5&#39;, latex_label=&#39;$f^L1_5$&#39;, unit=None)</span>
+<span class="na">recalib_L1_frequency_6</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">DeltaFunction(peak=252.27952521936786, name=&#39;recalib_L1_frequency_6&#39;, latex_label=&#39;$f^L1_6$&#39;, unit=None)</span>
+<span class="na">recalib_L1_frequency_7</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">DeltaFunction(peak=384.9083564974527, name=&#39;recalib_L1_frequency_7&#39;, latex_label=&#39;$f^L1_7$&#39;, unit=None)</span>
+<span class="na">recalib_L1_frequency_8</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">DeltaFunction(peak=587.2630478939719, name=&#39;recalib_L1_frequency_8&#39;, latex_label=&#39;$f^L1_8$&#39;, unit=None)</span>
+<span class="na">recalib_L1_frequency_9</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">DeltaFunction(peak=895.9999999999999, name=&#39;recalib_L1_frequency_9&#39;, latex_label=&#39;$f^L1_9$&#39;, unit=None)</span>
+<span class="na">recalib_L1_phase_0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">Gaussian(mu=-0.0005833495926038394, sigma=0.011935076952125917, name=&#39;recalib_L1_phase_0&#39;, latex_label=&#39;$\\phi^L1_0$&#39;, unit=None, boundary=&#39;reflective&#39;)</span>
+<span class="na">recalib_L1_phase_1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">Gaussian(mu=0.0017308582437840791, sigma=0.04461302678601372, name=&#39;recalib_L1_phase_1&#39;, latex_label=&#39;$\\phi^L1_1$&#39;, unit=None, boundary=&#39;reflective&#39;)</span>
+<span class="na">recalib_L1_phase_2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">Gaussian(mu=-0.0030789530404703763, sigma=0.06385353903965044, name=&#39;recalib_L1_phase_2&#39;, latex_label=&#39;$\\phi^L1_2$&#39;, unit=None, boundary=&#39;reflective&#39;)</span>
+<span class="na">recalib_L1_phase_3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">Gaussian(mu=-0.007335634179534384, sigma=0.03845148157288546, name=&#39;recalib_L1_phase_3&#39;, latex_label=&#39;$\\phi^L1_3$&#39;, unit=None, boundary=&#39;reflective&#39;)</span>
+<span class="na">recalib_L1_phase_4</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">Gaussian(mu=-0.004120898189789134, sigma=0.031049544202557854, name=&#39;recalib_L1_phase_4&#39;, latex_label=&#39;$\\phi^L1_4$&#39;, unit=None, boundary=&#39;reflective&#39;)</span>
+<span class="na">recalib_L1_phase_5</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">Gaussian(mu=0.0011166747305700196, sigma=0.023697040839693123, name=&#39;recalib_L1_phase_5&#39;, latex_label=&#39;$\\phi^L1_5$&#39;, unit=None, boundary=&#39;reflective&#39;)</span>
+<span class="na">recalib_L1_phase_6</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">Gaussian(mu=0.005946519588560299, sigma=0.010961143652309865, name=&#39;recalib_L1_phase_6&#39;, latex_label=&#39;$\\phi^L1_6$&#39;, unit=None, boundary=&#39;reflective&#39;)</span>
+<span class="na">recalib_L1_phase_7</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">Gaussian(mu=0.00660260623202184, sigma=0.011492145213656064, name=&#39;recalib_L1_phase_7&#39;, latex_label=&#39;$\\phi^L1_7$&#39;, unit=None, boundary=&#39;reflective&#39;)</span>
+<span class="na">recalib_L1_phase_8</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">Gaussian(mu=0.008854982418792892, sigma=0.009418760984904026, name=&#39;recalib_L1_phase_8&#39;, latex_label=&#39;$\\phi^L1_8$&#39;, unit=None, boundary=&#39;reflective&#39;)</span>
+<span class="na">recalib_L1_phase_9</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">Gaussian(mu=0.007685576912644035, sigma=0.012394194404677983, name=&#39;recalib_L1_phase_9&#39;, latex_label=&#39;$\\phi^L1_9$&#39;, unit=None, boundary=&#39;reflective&#39;)</span>
+<span class="na">recalib_V1_amplitude_0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">Gaussian(mu=0.0, sigma=0.05000000000000005, name=&#39;recalib_V1_amplitude_0&#39;, latex_label=&#39;$A^V1_0$&#39;, unit=None, boundary=&#39;reflective&#39;)</span>
+<span class="na">recalib_V1_amplitude_1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">Gaussian(mu=0.0, sigma=0.05000000000000003, name=&#39;recalib_V1_amplitude_1&#39;, latex_label=&#39;$A^V1_1$&#39;, unit=None, boundary=&#39;reflective&#39;)</span>
+<span class="na">recalib_V1_amplitude_2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">Gaussian(mu=0.0, sigma=0.05000000000000003, name=&#39;recalib_V1_amplitude_2&#39;, latex_label=&#39;$A^V1_2$&#39;, unit=None, boundary=&#39;reflective&#39;)</span>
+<span class="na">recalib_V1_amplitude_3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">Gaussian(mu=0.0, sigma=0.05000000000000005, name=&#39;recalib_V1_amplitude_3&#39;, latex_label=&#39;$A^V1_3$&#39;, unit=None, boundary=&#39;reflective&#39;)</span>
+<span class="na">recalib_V1_amplitude_4</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">Gaussian(mu=0.0, sigma=0.05000000000000004, name=&#39;recalib_V1_amplitude_4&#39;, latex_label=&#39;$A^V1_4$&#39;, unit=None, boundary=&#39;reflective&#39;)</span>
+<span class="na">recalib_V1_amplitude_5</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">Gaussian(mu=0.0, sigma=0.05000000000000005, name=&#39;recalib_V1_amplitude_5&#39;, latex_label=&#39;$A^V1_5$&#39;, unit=None, boundary=&#39;reflective&#39;)</span>
+<span class="na">recalib_V1_amplitude_6</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">Gaussian(mu=0.0, sigma=0.050000000000000044, name=&#39;recalib_V1_amplitude_6&#39;, latex_label=&#39;$A^V1_6$&#39;, unit=None, boundary=&#39;reflective&#39;)</span>
+<span class="na">recalib_V1_amplitude_7</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">Gaussian(mu=0.0, sigma=0.05000000000000005, name=&#39;recalib_V1_amplitude_7&#39;, latex_label=&#39;$A^V1_7$&#39;, unit=None, boundary=&#39;reflective&#39;)</span>
+<span class="na">recalib_V1_amplitude_8</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">Gaussian(mu=0.0, sigma=0.050000000000000044, name=&#39;recalib_V1_amplitude_8&#39;, latex_label=&#39;$A^V1_8$&#39;, unit=None, boundary=&#39;reflective&#39;)</span>
+<span class="na">recalib_V1_amplitude_9</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">Gaussian(mu=0.0, sigma=0.050000000000000044, name=&#39;recalib_V1_amplitude_9&#39;, latex_label=&#39;$A^V1_9$&#39;, unit=None, boundary=&#39;reflective&#39;)</span>
+<span class="na">recalib_V1_frequency_0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">DeltaFunction(peak=19.999999999999996, name=&#39;recalib_V1_frequency_0&#39;, latex_label=&#39;$f^V1_0$&#39;, unit=None)</span>
+<span class="na">recalib_V1_frequency_1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">DeltaFunction(peak=30.514434824844255, name=&#39;recalib_V1_frequency_1&#39;, latex_label=&#39;$f^V1_1$&#39;, unit=None)</span>
+<span class="na">recalib_V1_frequency_2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">DeltaFunction(peak=46.55653663398341, name=&#39;recalib_V1_frequency_2&#39;, latex_label=&#39;$f^V1_2$&#39;, unit=None)</span>
+<span class="na">recalib_V1_frequency_3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">DeltaFunction(peak=71.03232013940804, name=&#39;recalib_V1_frequency_3&#39;, latex_label=&#39;$f^V1_3$&#39;, unit=None)</span>
+<span class="na">recalib_V1_frequency_4</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">DeltaFunction(peak=108.37555516757195, name=&#39;recalib_V1_frequency_4&#39;, latex_label=&#39;$f^V1_4$&#39;, unit=None)</span>
+<span class="na">recalib_V1_frequency_5</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">DeltaFunction(peak=165.35094073835938, name=&#39;recalib_V1_frequency_5&#39;, latex_label=&#39;$f^V1_5$&#39;, unit=None)</span>
+<span class="na">recalib_V1_frequency_6</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">DeltaFunction(peak=252.27952521936786, name=&#39;recalib_V1_frequency_6&#39;, latex_label=&#39;$f^V1_6$&#39;, unit=None)</span>
+<span class="na">recalib_V1_frequency_7</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">DeltaFunction(peak=384.9083564974527, name=&#39;recalib_V1_frequency_7&#39;, latex_label=&#39;$f^V1_7$&#39;, unit=None)</span>
+<span class="na">recalib_V1_frequency_8</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">DeltaFunction(peak=587.2630478939719, name=&#39;recalib_V1_frequency_8&#39;, latex_label=&#39;$f^V1_8$&#39;, unit=None)</span>
+<span class="na">recalib_V1_frequency_9</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">DeltaFunction(peak=895.9999999999999, name=&#39;recalib_V1_frequency_9&#39;, latex_label=&#39;$f^V1_9$&#39;, unit=None)</span>
+<span class="na">recalib_V1_phase_0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">Gaussian(mu=0.0, sigma=0.035022551799129616, name=&#39;recalib_V1_phase_0&#39;, latex_label=&#39;$\\phi^V1_0$&#39;, unit=None, boundary=&#39;reflective&#39;)</span>
+<span class="na">recalib_V1_phase_1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">Gaussian(mu=0.0, sigma=0.03505247406256856, name=&#39;recalib_V1_phase_1&#39;, latex_label=&#39;$\\phi^V1_1$&#39;, unit=None, boundary=&#39;reflective&#39;)</span>
+<span class="na">recalib_V1_phase_2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">Gaussian(mu=0.0, sigma=0.03512203039071023, name=&#39;recalib_V1_phase_2&#39;, latex_label=&#39;$\\phi^V1_2$&#39;, unit=None, boundary=&#39;reflective&#39;)</span>
+<span class="na">recalib_V1_phase_3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">Gaussian(mu=0.0, sigma=0.03528341224334926, name=&#39;recalib_V1_phase_3&#39;, latex_label=&#39;$\\phi^V1_3$&#39;, unit=None, boundary=&#39;reflective&#39;)</span>
+<span class="na">recalib_V1_phase_4</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">Gaussian(mu=0.0, sigma=0.035656253585183276, name=&#39;recalib_V1_phase_4&#39;, latex_label=&#39;$\\phi^V1_4$&#39;, unit=None, boundary=&#39;reflective&#39;)</span>
+<span class="na">recalib_V1_phase_5</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">Gaussian(mu=0.0, sigma=0.03650941907284474, name=&#39;recalib_V1_phase_5&#39;, latex_label=&#39;$\\phi^V1_5$&#39;, unit=None, boundary=&#39;reflective&#39;)</span>
+<span class="na">recalib_V1_phase_6</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">Gaussian(mu=0.0, sigma=0.03842213099745747, name=&#39;recalib_V1_phase_6&#39;, latex_label=&#39;$\\phi^V1_6$&#39;, unit=None, boundary=&#39;reflective&#39;)</span>
+<span class="na">recalib_V1_phase_7</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">Gaussian(mu=0.0, sigma=0.042542804391691495, name=&#39;recalib_V1_phase_7&#39;, latex_label=&#39;$\\phi^V1_7$&#39;, unit=None, boundary=&#39;reflective&#39;)</span>
+<span class="na">recalib_V1_phase_8</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">Gaussian(mu=0.0, sigma=0.05085787241000259, name=&#39;recalib_V1_phase_8&#39;, latex_label=&#39;$\\phi^V1_8$&#39;, unit=None, boundary=&#39;reflective&#39;)</span>
+<span class="na">recalib_V1_phase_9</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">Gaussian(mu=0.0, sigma=0.06629019746380001, name=&#39;recalib_V1_phase_9&#39;, latex_label=&#39;$\\phi^V1_9$&#39;, unit=None, boundary=&#39;reflective&#39;)</span>
+<span class="na">theta_jn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">Sine(name=&#39;theta_jn&#39;, latex_label=&#39;$\\theta_{JN}$&#39;, unit=None, minimum=0, maximum=3.141592653589793, boundary=None)</span>
+<span class="na">tilt_1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">Sine(name=&#39;tilt_1&#39;, latex_label=&#39;$\\theta_1$&#39;, unit=None, minimum=0, maximum=3.141592653589793, boundary=None)</span>
+<span class="na">tilt_2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">Sine(name=&#39;tilt_2&#39;, latex_label=&#39;$\\theta_2$&#39;, unit=None, minimum=0, maximum=3.141592653589793, boundary=None)</span>
+<span class="na">time_jitter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">Uniform(minimum=-0.00048828125, maximum=0.00048828125, name=None, latex_label=None, unit=None, boundary=&#39;periodic&#39;)</span>
+<span class="na">zenith</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">Sine(name=None, latex_label=&#39;$\\kappa$&#39;, unit=None, minimum=0, maximum=3.141592653589793, boundary=None)</span>
+</pre></div>
+</div>
+<script>
+  $(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip();
+  });
+</script>
+<div class='jumbotron' style='margin-bottom:0; line-height: 0.5;background-color:#989898; bottom:0; position:bottom;width:100%'>
+<div class='container'>
+  <div class='row'>
+    <div class='col-sm-4 icon-bar'>
+      <div class='icon'>
+<a href='https://git.ligo.org/lscsoft/pesummary/tree/v1.3.2' data-toggle='tooltip' title='View PESummary-v1.3.2'><i class='fa fa-code' style='font-size: 30px; color: #E8E8E8; font-weight: 900; padding-right:10px'></i></a>
+<a href='https://git.ligo.org/lscsoft/pesummary/issues' data-toggle='tooltip' title='Open an issue ticket'><i class='fa fa-ticket' style='font-size: 30px; color: #E8E8E8; font-weight: 900; padding-right:10px'></i></a>
+<a href='https://lscsoft.docs.ligo.org/pesummary/' data-toggle='tooltip' title='View the docs!'><i class='fa fa-book' style='font-size: 30px; color: #E8E8E8; font-weight: 900; padding-right:10px'></i></a>
+<a href='https://lscsoft.docs.ligo.org/pesummary/stable/tutorials/make_your_own_page_from_metafile.html' data-toggle='tooltip' title='Make your own page'><i class='fa fa-window-restore' style='font-size: 30px; color: #E8E8E8; font-weight: 900; padding-right:10px'></i></a>
+      </div>
+    </div>
+    <div class='col-sm-7'>
+<p style='color: #E8E8E8; font-weight: bold; font-family: arial-body; margin-top:14px'>This page was produced by vivien at 13:08 on November 26 2024</p>
+    </div>
+  </div>
+</div>
+</div>

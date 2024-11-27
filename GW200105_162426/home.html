@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+  <title>Summary Pages</title>
+<!--
+                                    Made by
+            ____  ___________
+           / __ \/ ____/ ___/__  ______ ___  ____ ___  ____ ________  __
+          / /_/ / __/  \__ \/ / / / __ `__ \/ __ `__ \/ __ `/ ___/ / / /
+         / ____/ /___ ___/ / /_/ / / / / / / / / / / / /_/ / /  / /_/ /
+        /_/   /_____//____/\__,_/_/ /_/ /_/_/ /_/ /_/\__,_/_/   \__, /
+                                                               /____/
+
+                                   MIT License
+
+       PESummary was developed by Hoy et al. and source code can be seen
+       here: git.ligo.org/lscsoft/pesummary. If you wish to use PESummary
+   for your own work, please cite PESummary. The following page gives details
+   https://lscsoft.docs.ligo.org/pesummary/stable/citing_pesummary.html.
+                                     Thanks!
+  -->
+<html lang='en'>
+    <title>title</title>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css'>
+
+</head>
+<body style='background-color:#F8F8F8; margin-top:5em; min-height: 100%'>
+
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js'></script>
+    <script src='https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js'></script>
+    <script src='./js/combine_corner.js'></script>
+    <script src='./js/grab.js'></script>
+    <script src='./js/modal.js'></script>
+    <script src='./js/multi_dropbar.js'></script>
+    <script src='./js/multiple_posteriors.js'></script>
+    <script src='./js/search.js'></script>
+    <script src='./js/side_bar.js'></script>
+    <script src='./js/html_to_csv.js'></script>
+    <script src='./js/html_to_json.js'></script>
+    <script src='./js/html_to_shell.js'></script>
+    <script src='./js/expert.js'></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./css/navbar.css">
+    <link rel="stylesheet" href="./css/font.css">
+    <link rel="stylesheet" href="./css/table.css">
+    <link rel="stylesheet" href="./css/image_styles.css">
+    <link rel="stylesheet" href="./css/watermark.css">
+    <link rel="stylesheet" href="./css/toggle.css">
+
+<div id='background'>
+<p id='bg-text'>Preliminary Preliminary</p>
+<p id='bg-text'>Preliminary Preliminary</p>
+<p id='bg-text'>Preliminary Preliminary</p>
+</div>
+<h7 hidden>None</h7>
+<h7 hidden>None</h7>
+<nav class='navbar navbar-expand-sm navbar-dark bg-dark fixed-top'>
+  <a class='navbar-brand' href='#' style='color: white'>Navbar</a>
+  <button class='navbar-toggler' type='button' data-toggle='collapse' data-target='#collapsibleNavbar'>
+    <span class='navbar-toggler-icon'></span>
+  </button>
+    <div class='collapse navbar-collapse' id='collapsibleNavbar'>
+      <ul class='navbar-nav'>
+        <li class='nav-item'>
+          <a class='nav-link' href='#' onclick='grab_html("home")'>home</a>
+        </li>
+        <li class='nav-item'>
+          <li class='nav-item dropdown'>
+            <a class='nav-link dropdown-toggle' href='#' id='navbarDropdown' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
+            Result Pages
+            </a>
+            <ul class='dropdown-menu' aria-labelledby='dropdown1'>
+              <li class='dropdown-item' href='#' onclick='grab_html("C01:IMRPhenomNSBH:HighSpin", label="C01:IMRPhenomNSBH:HighSpin")'><a>C01:IMRPhenomNSBH:HighSpin</a></li>
+              <li class='dropdown-item' href='#' onclick='grab_html("C01:IMRPhenomNSBH:LowSpin", label="C01:IMRPhenomNSBH:LowSpin")'><a>C01:IMRPhenomNSBH:LowSpin</a></li>
+              <li class='dropdown-item' href='#' onclick='grab_html("C01:IMRPhenomXPHM:HighSpin", label="C01:IMRPhenomXPHM:HighSpin")'><a>C01:IMRPhenomXPHM:HighSpin</a></li>
+              <li class='dropdown-item' href='#' onclick='grab_html("C01:Mixed", label="C01:Mixed")'><a>C01:Mixed</a></li>
+              <li class='dropdown-item' href='#' onclick='grab_html("C01:SEOBNRv4PHM", label="C01:SEOBNRv4PHM")'><a>C01:SEOBNRv4PHM</a></li>
+              <li class='dropdown-item' href='#' onclick='grab_html("C01:SEOBNRv4_ROM_NRTidalv2_NSBH:HighSpin", label="C01:SEOBNRv4_ROM_NRTidalv2_NSBH:HighSpin")'><a>C01:SEOBNRv4_ROM_NRTidalv2_NSBH:HighSpin</a></li>
+              <li class='dropdown-item' href='#' onclick='grab_html("C01:SEOBNRv4_ROM_NRTidalv2_NSBH:LowSpin", label="C01:SEOBNRv4_ROM_NRTidalv2_NSBH:LowSpin")'><a>C01:SEOBNRv4_ROM_NRTidalv2_NSBH:LowSpin</a></li>
+              <li class='dropdown-item' href='#' onclick='grab_html("Comparison")'><a>Comparison</a></li>
+            </ul>
+          </li>
+        <li class='nav-item'>
+          <a class='nav-link' href='#' onclick='grab_html("Logging")'>Logging</a>
+        </li>
+        <li class='nav-item'>
+          <a class='nav-link' href='#' onclick='grab_html("Version")'>Version</a>
+        </li>
+      </ul>
+    </div>
+    <div class='collapse navbar-collapse' id='collapsibleNavbar'>
+      <ul class='navbar-nav flex-row ml-md-auto d-none d-md-flex'style='margin-right:1em;'>
+  <a class='nav-link' href='#', onclick='grab_html("Downloads")'>Downloads</a>
+  <a class='nav-link' href='#', onclick='grab_html("About")'>About</a>
+      </ul>
+    </div>
+    <input type='text' placeholder='search' id='search'>
+    <button type='submit' onclick='myFunction()'>Search</button>
+</nav>
+  <div class='banner'>
+Summary
+</div>
+  <div class='paragraph'>
+The figures below show the summary plots for the run
+</div>
+  <div class='banner'>
+C01:IMRPhenomNSBH:HighSpin
+</div>
+  <div class='paragraph'>
+The figures below show the plots for C01:IMRPhenomNSBH:HighSpin
+</div>
+<link rel='stylesheet' href='../css/image_styles.css'>
+<script>
+  $(document).ready(function(){
+    $('[data-toggle="popover"]').popover();
+  });
+</script>
+<style>
+  .popover {
+    max-width: 550px;
+    width: 550px;
+  }
+</style>
+<div class='container' style='margin-top:3em; margin-bottom:5em; background-color:#FFFFFF; box-shadow: 0 0 5px grey; max-width: 1400px'>
+  <div class='mx-auto d-block'>
+    <div class='row justify-content-center'>
+      <div class='row'>
+        <div class='column' style='padding-left: 1em;'>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class='modal fade bs-example-modal-lg' tabindex='-1' role='dialog' aria-labelledby='myLargeModalLabel' aria-hidden='true' id='Modal_CC140E' style='margin-top: 200px;'>
+  <div class='modal-dialog modal-lg' style='width:90%'>
+    <div class='modal-content'>
+      <div id='demo_CC140E' class='carousel slide' data-ride='carousel' data-interval='false'>
+        <ul class='carousel-indicators'>
+          <li data-target='#demo_CC140E' data-slide-to='0' class='active'></li>
+          <li data-target='#demo_CC140E' data-slide-to='1'></li>
+          <li data-target='#demo_CC140E' data-slide-to='2'></li>
+        </ul>
+        <div class='carousel-inner'>
+        </div>
+        <a class='carousel-control-prev' href='#demo_CC140E' data-slide='prev'>
+          <span class='carousel-control-prev-icon'></span>
+        </a>
+        <a class='carousel-control-next' href='#demo_CC140E' data-slide='next'>
+          <span class='carousel-control-next-icon'></span>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+  <div class='banner'>
+C01:IMRPhenomNSBH:LowSpin
+</div>
+  <div class='paragraph'>
+The figures below show the plots for C01:IMRPhenomNSBH:LowSpin
+</div>
+<link rel='stylesheet' href='../css/image_styles.css'>
+<script>
+  $(document).ready(function(){
+    $('[data-toggle="popover"]').popover();
+  });
+</script>
+<style>
+  .popover {
+    max-width: 550px;
+    width: 550px;
+  }
+</style>
+<div class='container' style='margin-top:3em; margin-bottom:5em; background-color:#FFFFFF; box-shadow: 0 0 5px grey; max-width: 1400px'>
+  <div class='mx-auto d-block'>
+    <div class='row justify-content-center'>
+      <div class='row'>
+        <div class='column' style='padding-left: 1em;'>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class='modal fade bs-example-modal-lg' tabindex='-1' role='dialog' aria-labelledby='myLargeModalLabel' aria-hidden='true' id='Modal_AB6BA2' style='margin-top: 200px;'>
+  <div class='modal-dialog modal-lg' style='width:90%'>
+    <div class='modal-content'>
+      <div id='demo_AB6BA2' class='carousel slide' data-ride='carousel' data-interval='false'>
+        <ul class='carousel-indicators'>
+          <li data-target='#demo_AB6BA2' data-slide-to='0' class='active'></li>
+          <li data-target='#demo_AB6BA2' data-slide-to='1'></li>
+          <li data-target='#demo_AB6BA2' data-slide-to='2'></li>
+        </ul>
+        <div class='carousel-inner'>
+        </div>
+        <a class='carousel-control-prev' href='#demo_AB6BA2' data-slide='prev'>
+          <span class='carousel-control-prev-icon'></span>
+        </a>
+        <a class='carousel-control-next' href='#demo_AB6BA2' data-slide='next'>
+          <span class='carousel-control-next-icon'></span>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+  <div class='banner'>
+C01:IMRPhenomXPHM:HighSpin
+</div>
+  <div class='paragraph'>
+The figures below show the plots for C01:IMRPhenomXPHM:HighSpin
+</div>
+<link rel='stylesheet' href='../css/image_styles.css'>
+<script>
+  $(document).ready(function(){
+    $('[data-toggle="popover"]').popover();
+  });
+</script>
+<style>
+  .popover {
+    max-width: 550px;
+    width: 550px;
+  }
+</style>
+<div class='container' style='margin-top:3em; margin-bottom:5em; background-color:#FFFFFF; box-shadow: 0 0 5px grey; max-width: 1400px'>
+  <div class='mx-auto d-block'>
+    <div class='row justify-content-center'>
+      <div class='row'>
+        <div class='column' style='padding-left: 1em;'>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class='modal fade bs-example-modal-lg' tabindex='-1' role='dialog' aria-labelledby='myLargeModalLabel' aria-hidden='true' id='Modal_B34403' style='margin-top: 200px;'>
+  <div class='modal-dialog modal-lg' style='width:90%'>
+    <div class='modal-content'>
+      <div id='demo_B34403' class='carousel slide' data-ride='carousel' data-interval='false'>
+        <ul class='carousel-indicators'>
+          <li data-target='#demo_B34403' data-slide-to='0' class='active'></li>
+          <li data-target='#demo_B34403' data-slide-to='1'></li>
+          <li data-target='#demo_B34403' data-slide-to='2'></li>
+        </ul>
+        <div class='carousel-inner'>
+        </div>
+        <a class='carousel-control-prev' href='#demo_B34403' data-slide='prev'>
+          <span class='carousel-control-prev-icon'></span>
+        </a>
+        <a class='carousel-control-next' href='#demo_B34403' data-slide='next'>
+          <span class='carousel-control-next-icon'></span>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+  <div class='banner'>
+C01:Mixed
+</div>
+  <div class='paragraph'>
+The figures below show the plots for C01:Mixed
+</div>
+<link rel='stylesheet' href='../css/image_styles.css'>
+<script>
+  $(document).ready(function(){
+    $('[data-toggle="popover"]').popover();
+  });
+</script>
+<style>
+  .popover {
+    max-width: 550px;
+    width: 550px;
+  }
+</style>
+<div class='container' style='margin-top:3em; margin-bottom:5em; background-color:#FFFFFF; box-shadow: 0 0 5px grey; max-width: 1400px'>
+  <div class='mx-auto d-block'>
+    <div class='row justify-content-center'>
+      <div class='row'>
+        <div class='column' style='padding-left: 1em;'>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class='modal fade bs-example-modal-lg' tabindex='-1' role='dialog' aria-labelledby='myLargeModalLabel' aria-hidden='true' id='Modal_4325FE' style='margin-top: 200px;'>
+  <div class='modal-dialog modal-lg' style='width:90%'>
+    <div class='modal-content'>
+      <div id='demo_4325FE' class='carousel slide' data-ride='carousel' data-interval='false'>
+        <ul class='carousel-indicators'>
+          <li data-target='#demo_4325FE' data-slide-to='0' class='active'></li>
+          <li data-target='#demo_4325FE' data-slide-to='1'></li>
+          <li data-target='#demo_4325FE' data-slide-to='2'></li>
+        </ul>
+        <div class='carousel-inner'>
+        </div>
+        <a class='carousel-control-prev' href='#demo_4325FE' data-slide='prev'>
+          <span class='carousel-control-prev-icon'></span>
+        </a>
+        <a class='carousel-control-next' href='#demo_4325FE' data-slide='next'>
+          <span class='carousel-control-next-icon'></span>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+  <div class='banner'>
+C01:SEOBNRv4PHM
+</div>
+  <div class='paragraph'>
+The figures below show the plots for C01:SEOBNRv4PHM
+</div>
+<link rel='stylesheet' href='../css/image_styles.css'>
+<script>
+  $(document).ready(function(){
+    $('[data-toggle="popover"]').popover();
+  });
+</script>
+<style>
+  .popover {
+    max-width: 550px;
+    width: 550px;
+  }
+</style>
+<div class='container' style='margin-top:3em; margin-bottom:5em; background-color:#FFFFFF; box-shadow: 0 0 5px grey; max-width: 1400px'>
+  <div class='mx-auto d-block'>
+    <div class='row justify-content-center'>
+      <div class='row'>
+        <div class='column' style='padding-left: 1em;'>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class='modal fade bs-example-modal-lg' tabindex='-1' role='dialog' aria-labelledby='myLargeModalLabel' aria-hidden='true' id='Modal_FD98B4' style='margin-top: 200px;'>
+  <div class='modal-dialog modal-lg' style='width:90%'>
+    <div class='modal-content'>
+      <div id='demo_FD98B4' class='carousel slide' data-ride='carousel' data-interval='false'>
+        <ul class='carousel-indicators'>
+          <li data-target='#demo_FD98B4' data-slide-to='0' class='active'></li>
+          <li data-target='#demo_FD98B4' data-slide-to='1'></li>
+          <li data-target='#demo_FD98B4' data-slide-to='2'></li>
+        </ul>
+        <div class='carousel-inner'>
+        </div>
+        <a class='carousel-control-prev' href='#demo_FD98B4' data-slide='prev'>
+          <span class='carousel-control-prev-icon'></span>
+        </a>
+        <a class='carousel-control-next' href='#demo_FD98B4' data-slide='next'>
+          <span class='carousel-control-next-icon'></span>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+  <div class='banner'>
+C01:SEOBNRv4_ROM_NRTidalv2_NSBH:HighSpin
+</div>
+  <div class='paragraph'>
+The figures below show the plots for C01:SEOBNRv4_ROM_NRTidalv2_NSBH:HighSpin
+</div>
+<link rel='stylesheet' href='../css/image_styles.css'>
+<script>
+  $(document).ready(function(){
+    $('[data-toggle="popover"]').popover();
+  });
+</script>
+<style>
+  .popover {
+    max-width: 550px;
+    width: 550px;
+  }
+</style>
+<div class='container' style='margin-top:3em; margin-bottom:5em; background-color:#FFFFFF; box-shadow: 0 0 5px grey; max-width: 1400px'>
+  <div class='mx-auto d-block'>
+    <div class='row justify-content-center'>
+      <div class='row'>
+        <div class='column' style='padding-left: 1em;'>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class='modal fade bs-example-modal-lg' tabindex='-1' role='dialog' aria-labelledby='myLargeModalLabel' aria-hidden='true' id='Modal_90A3E0' style='margin-top: 200px;'>
+  <div class='modal-dialog modal-lg' style='width:90%'>
+    <div class='modal-content'>
+      <div id='demo_90A3E0' class='carousel slide' data-ride='carousel' data-interval='false'>
+        <ul class='carousel-indicators'>
+          <li data-target='#demo_90A3E0' data-slide-to='0' class='active'></li>
+          <li data-target='#demo_90A3E0' data-slide-to='1'></li>
+          <li data-target='#demo_90A3E0' data-slide-to='2'></li>
+        </ul>
+        <div class='carousel-inner'>
+        </div>
+        <a class='carousel-control-prev' href='#demo_90A3E0' data-slide='prev'>
+          <span class='carousel-control-prev-icon'></span>
+        </a>
+        <a class='carousel-control-next' href='#demo_90A3E0' data-slide='next'>
+          <span class='carousel-control-next-icon'></span>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+  <div class='banner'>
+C01:SEOBNRv4_ROM_NRTidalv2_NSBH:LowSpin
+</div>
+  <div class='paragraph'>
+The figures below show the plots for C01:SEOBNRv4_ROM_NRTidalv2_NSBH:LowSpin
+</div>
+<link rel='stylesheet' href='../css/image_styles.css'>
+<script>
+  $(document).ready(function(){
+    $('[data-toggle="popover"]').popover();
+  });
+</script>
+<style>
+  .popover {
+    max-width: 550px;
+    width: 550px;
+  }
+</style>
+<div class='container' style='margin-top:3em; margin-bottom:5em; background-color:#FFFFFF; box-shadow: 0 0 5px grey; max-width: 1400px'>
+  <div class='mx-auto d-block'>
+    <div class='row justify-content-center'>
+      <div class='row'>
+        <div class='column' style='padding-left: 1em;'>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class='modal fade bs-example-modal-lg' tabindex='-1' role='dialog' aria-labelledby='myLargeModalLabel' aria-hidden='true' id='Modal_9815E4' style='margin-top: 200px;'>
+  <div class='modal-dialog modal-lg' style='width:90%'>
+    <div class='modal-content'>
+      <div id='demo_9815E4' class='carousel slide' data-ride='carousel' data-interval='false'>
+        <ul class='carousel-indicators'>
+          <li data-target='#demo_9815E4' data-slide-to='0' class='active'></li>
+          <li data-target='#demo_9815E4' data-slide-to='1'></li>
+          <li data-target='#demo_9815E4' data-slide-to='2'></li>
+        </ul>
+        <div class='carousel-inner'>
+        </div>
+        <a class='carousel-control-prev' href='#demo_9815E4' data-slide='prev'>
+          <span class='carousel-control-prev-icon'></span>
+        </a>
+        <a class='carousel-control-next' href='#demo_9815E4' data-slide='next'>
+          <span class='carousel-control-next-icon'></span>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+  <div class='banner' style='font-size: 26px;'>
+Sampler kwargs
+</div>
+  <div class='paragraph'>
+Sampler information extracted from each result file
+</div>
+<div class='container' style='margin-top:3em; margin-bottom:5em; max-width:1400px'>
+    <div class='row justify-content-center'>
+                  <div class='container' style='max-width:1400px'>
+                    <div class='table-responsive'>
+                        <table class='table table-hover' style='max-width:1400px'>
+                          <thead>
+                            <tr>
+                              <th colspan='1'>label</th>
+                              <th colspan='1'>ln_bayes_factor</th>
+                              <th colspan='1'>ln_evidence</th>
+                              <th colspan='1'>ln_evidence_error</th>
+                              <th colspan='1'>ln_noise_evidence</th>
+                              <th colspan='1'>nsamples</th>
+                              <th colspan='1'>pe_algorithm</th>
+                            </tr>
+                          <tbody>
+                            <tr>
+                              <td>C01:IMRPhenomNSBH:HighSpin</td>
+                              <td>66.7</td>
+                              <td>-227891.56</td>
+                              <td>0.14</td>
+                              <td>-227958.26</td>
+                              <td>20000</td>
+                              <td>bilby</td>
+                            </tr>
+                            <tr>
+                              <td>C01:IMRPhenomNSBH:LowSpin</td>
+                              <td>66.67</td>
+                              <td>-227891.59</td>
+                              <td>0.14</td>
+                              <td>-227958.26</td>
+                              <td>20000</td>
+                              <td>bilby</td>
+                            </tr>
+                            <tr>
+                              <td>C01:IMRPhenomXPHM:HighSpin</td>
+                              <td>66.08</td>
+                              <td>-227892.18</td>
+                              <td>0.15</td>
+                              <td>-227958.26</td>
+                              <td>20000</td>
+                              <td>bilby</td>
+                            </tr>
+                            <tr>
+                              <td>C01:Mixed</td>
+                              <td>-</td>
+                              <td>-</td>
+                              <td>-</td>
+                              <td>-</td>
+                              <td>40000</td>
+                              <td>-</td>
+                            </tr>
+                            <tr>
+                              <td>C01:SEOBNRv4PHM</td>
+                              <td>-</td>
+                              <td>-</td>
+                              <td>-</td>
+                              <td>-</td>
+                              <td>20000</td>
+                              <td>-</td>
+                            </tr>
+                            <tr>
+                              <td>C01:SEOBNRv4_ROM_NRTidalv2_NSBH:HighSpin</td>
+                              <td>66.08</td>
+                              <td>-227892.19</td>
+                              <td>0.14</td>
+                              <td>-227958.26</td>
+                              <td>20000</td>
+                              <td>bilby</td>
+                            </tr>
+                            <tr>
+                              <td>C01:SEOBNRv4_ROM_NRTidalv2_NSBH:LowSpin</td>
+                              <td>66.07</td>
+                              <td>-227892.19</td>
+                              <td>0.14</td>
+                              <td>-227958.26</td>
+                              <td>20000</td>
+                              <td>bilby</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                    </div>
+                  </div>
+    </div>
+</div>
+<div class='container' style='margin-top:-4em; margin-bottom:5em; max-width: 1400px'>
+<button type='button' onclick='export_table_to_csv("sampler.csv")' class='btn btn-outline-secondary btn-table'>Export to CSV</button>
+</div>
+  <div class='banner' style='font-size: 26px;'>
+Meta data
+</div>
+  <div class='paragraph'>
+Meta data extracted from each result file
+</div>
+<div class='container' style='margin-top:3em; margin-bottom:5em; max-width:1400px'>
+    <div class='row justify-content-center'>
+                  <div class='container' style='max-width:1400px'>
+                    <div class='table-responsive'>
+                        <table class='table table-hover' style='max-width:1400px'>
+                          <thead>
+                            <tr>
+                              <th colspan='1'>label</th>
+                              <th colspan='1'>NSBH_merger_type_probabilities</th>
+                              <th colspan='1'>approximant</th>
+                              <th colspan='1'>baryonic_mass_fits</th>
+                              <th colspan='1'>baryonic_torus_mass_fits</th>
+                              <th colspan='1'>compactness_fits</th>
+                              <th colspan='1'>cosmology</th>
+                              <th colspan='1'>delta_f</th>
+                              <th colspan='1'>f_final</th>
+                              <th colspan='1'>f_low</th>
+                              <th colspan='1'>f_ref</th>
+                              <th colspan='1'>final_mass_NR_fits</th>
+                              <th colspan='1'>final_spin_NR_fits</th>
+                              <th colspan='1'>quasinormal_mode_fits</th>
+                              <th colspan='1'>tidal_disruption_frequency_fits</th>
+                              <th colspan='1'>f_start</th>
+                              <th colspan='1'>peak_luminosity_NR_fits</th>
+                              <th colspan='1'>backward_spin_evolution</th>
+                              <th colspan='1'>combined</th>
+                              <th colspan='1'>forward_spin_evolution</th>
+                            </tr>
+                          <tbody>
+                            <tr>
+                              <td>C01:IMRPhenomNSBH:HighSpin</td>
+                              <td>{'disruptive': 59.18, 'mildly_disruptive': 18.56, 'non_disruptive': 22.26}</td>
+                              <td>IMRPhenomNSBH</td>
+                              <td>Breu2016</td>
+                              <td>Foucart2012</td>
+                              <td>YagiYunes2017_with_BBHlimit</td>
+                              <td>Planck15</td>
+                              <td>0.00390625</td>
+                              <td>1024.0</td>
+                              <td>20.0</td>
+                              <td>20.0</td>
+                              <td>Zappa2019</td>
+                              <td>Zappa2019</td>
+                              <td>London2019</td>
+                              <td>Pannarale2018</td>
+                              <td>20.0</td>
+                              <td>['function bbh_peak_luminosity_non_precessing_UIB2016 at 0x310269300', 'function bbh_peak_luminosity_non_precessing_Healyetal at 0x3102693a0']</td>
+                              <td>-</td>
+                              <td>-</td>
+                              <td>-</td>
+                            </tr>
+                            <tr>
+                              <td>C01:IMRPhenomNSBH:LowSpin</td>
+                              <td>{'disruptive': 58.05, 'mildly_disruptive': 18.71, 'non_disruptive': 23.23}</td>
+                              <td>IMRPhenomNSBH</td>
+                              <td>Breu2016</td>
+                              <td>Foucart2012</td>
+                              <td>YagiYunes2017_with_BBHlimit</td>
+                              <td>Planck15</td>
+                              <td>0.00390625</td>
+                              <td>1024.0</td>
+                              <td>20.0</td>
+                              <td>20.0</td>
+                              <td>Zappa2019</td>
+                              <td>Zappa2019</td>
+                              <td>London2019</td>
+                              <td>Pannarale2018</td>
+                              <td>20.0</td>
+                              <td>['function bbh_peak_luminosity_non_precessing_UIB2016 at 0x310269300', 'function bbh_peak_luminosity_non_precessing_Healyetal at 0x3102693a0']</td>
+                              <td>-</td>
+                              <td>-</td>
+                              <td>-</td>
+                            </tr>
+                            <tr>
+                              <td>C01:IMRPhenomXPHM:HighSpin</td>
+                              <td>-</td>
+                              <td>IMRPhenomXPHM</td>
+                              <td>-</td>
+                              <td>-</td>
+                              <td>-</td>
+                              <td>Planck15</td>
+                              <td>0.00390625</td>
+                              <td>1024.0</td>
+                              <td>20.0</td>
+                              <td>20.0</td>
+                              <td>[b'function bbh_final_mass_non_precessing_UIB2016 at 0x2ba3d89b6a60'
+ b'function bbh_final_mass_non_precessing_Healyetal at 0x2ba3d9862160']</td>
+                              <td>[b'function bbh_final_spin_precessing_projected_UIB2016 at 0x2ba3d9873310'
+ b'function bbh_final_spin_precessing_projected_Healyetal at 0x2ba3d9873160'
+ b'function bbh_final_spin_precessing_HBR2016 at 0x2ba3d98734c0']</td>
+                              <td>-</td>
+                              <td>-</td>
+                              <td>20.0</td>
+                              <td>[b'function bbh_peak_luminosity_non_precessing_UIB2016 at 0x2ba3d9873550'
+ b'function bbh_peak_luminosity_non_precessing_Healyetal at 0x2ba3d98735e0']</td>
+                              <td>[b'precession_averaged'
+ b'lalsimulation.tilts_at_infinity.hybrid_spin_evolution.calc_tilts_at_infty_hybrid_evolve==v1']</td>
+                              <td>-</td>
+                              <td>-</td>
+                            </tr>
+                            <tr>
+                              <td>C01:Mixed</td>
+                              <td>-</td>
+                              <td>-</td>
+                              <td>-</td>
+                              <td>-</td>
+                              <td>-</td>
+                              <td>Planck15</td>
+                              <td>0.00390625</td>
+                              <td>1024.0</td>
+                              <td>20.0</td>
+                              <td>-</td>
+                              <td>-</td>
+                              <td>-</td>
+                              <td>-</td>
+                              <td>-</td>
+                              <td>20.0</td>
+                              <td>-</td>
+                              <td>-</td>
+                              <td>C01:IMRPhenomXPHM:HighSpin, C01:SEOBNRv4PHM</td>
+                              <td>-</td>
+                            </tr>
+                            <tr>
+                              <td>C01:SEOBNRv4PHM</td>
+                              <td>-</td>
+                              <td>SEOBNRv4PHM</td>
+                              <td>-</td>
+                              <td>-</td>
+                              <td>-</td>
+                              <td>Planck15</td>
+                              <td>0.00390625</td>
+                              <td>1024.0</td>
+                              <td>20.0</td>
+                              <td>20.0</td>
+                              <td>[b'function bbh_final_mass_non_precessing_UIB2016 at 0x2b450c0cdc10'
+ b'function bbh_final_mass_non_precessing_Healyetal at 0x2b450c0e95e0']</td>
+                              <td>[b'function bbh_final_spin_precessing_projected_UIB2016 at 0x2b450c0d44c0'
+ b'function bbh_final_spin_precessing_projected_Healyetal at 0x2b450c0d4310'
+ b'function bbh_final_spin_precessing_HBR2016 at 0x2b450c0d4670']</td>
+                              <td>-</td>
+                              <td>-</td>
+                              <td>20.0</td>
+                              <td>[b'function bbh_peak_luminosity_non_precessing_UIB2016 at 0x2b450c0d4700'
+ b'function bbh_peak_luminosity_non_precessing_Healyetal at 0x2b450c0d4790']</td>
+                              <td>[b'precession_averaged'
+ b'lalsimulation.tilts_at_infinity.hybrid_spin_evolution.calc_tilts_at_infty_hybrid_evolve==v1']</td>
+                              <td>-</td>
+                              <td>0.408248290463863</td>
+                            </tr>
+                            <tr>
+                              <td>C01:SEOBNRv4_ROM_NRTidalv2_NSBH:HighSpin</td>
+                              <td>-</td>
+                              <td>SEOBNRv4_ROM_NRTidalv2_NSBH</td>
+                              <td>Breu2016</td>
+                              <td>-</td>
+                              <td>YagiYunes2017_with_BBHlimit</td>
+                              <td>Planck15</td>
+                              <td>0.00390625</td>
+                              <td>1024.0</td>
+                              <td>20.0</td>
+                              <td>20.0</td>
+                              <td>['function bbh_final_mass_non_precessing_UIB2016 at 0x310268720', 'function bbh_final_mass_non_precessing_Healyetal at 0x312c90400']</td>
+                              <td>['function bbh_final_spin_precessing_projected_UIB2016 at 0x310269080', 'function bbh_final_spin_precessing_projected_Healyetal at 0x310268ea0', 'function bbh_final_spin_precessing_HBR2016 at 0x310269260']</td>
+                              <td>-</td>
+                              <td>-</td>
+                              <td>20.0</td>
+                              <td>['function bbh_peak_luminosity_non_precessing_UIB2016 at 0x310269300', 'function bbh_peak_luminosity_non_precessing_Healyetal at 0x3102693a0']</td>
+                              <td>-</td>
+                              <td>-</td>
+                              <td>-</td>
+                            </tr>
+                            <tr>
+                              <td>C01:SEOBNRv4_ROM_NRTidalv2_NSBH:LowSpin</td>
+                              <td>-</td>
+                              <td>SEOBNRv4_ROM_NRTidalv2_NSBH</td>
+                              <td>Breu2016</td>
+                              <td>-</td>
+                              <td>YagiYunes2017_with_BBHlimit</td>
+                              <td>Planck15</td>
+                              <td>0.00390625</td>
+                              <td>1024.0</td>
+                              <td>20.0</td>
+                              <td>20.0</td>
+                              <td>['function bbh_final_mass_non_precessing_UIB2016 at 0x310268720', 'function bbh_final_mass_non_precessing_Healyetal at 0x312c90400']</td>
+                              <td>['function bbh_final_spin_precessing_projected_UIB2016 at 0x310269080', 'function bbh_final_spin_precessing_projected_Healyetal at 0x310268ea0', 'function bbh_final_spin_precessing_HBR2016 at 0x310269260']</td>
+                              <td>-</td>
+                              <td>-</td>
+                              <td>20.0</td>
+                              <td>['function bbh_peak_luminosity_non_precessing_UIB2016 at 0x310269300', 'function bbh_peak_luminosity_non_precessing_Healyetal at 0x3102693a0']</td>
+                              <td>-</td>
+                              <td>-</td>
+                              <td>-</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                    </div>
+                  </div>
+    </div>
+</div>
+<div class='container' style='margin-top:-4em; margin-bottom:5em; max-width: 1400px'>
+<button type='button' onclick='export_table_to_csv("meta_data.csv")' class='btn btn-outline-secondary btn-table'>Export to CSV</button>
+</div>
+<script>
+  $(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip();
+  });
+</script>
+<div class='jumbotron' style='margin-bottom:0; line-height: 0.5;background-color:#989898; bottom:0; position:bottom;width:100%'>
+<div class='container'>
+  <div class='row'>
+    <div class='col-sm-4 icon-bar'>
+      <div class='icon'>
+<a href='https://git.ligo.org/lscsoft/pesummary/tree/v1.3.2' data-toggle='tooltip' title='View PESummary-v1.3.2'><i class='fa fa-code' style='font-size: 30px; color: #E8E8E8; font-weight: 900; padding-right:10px'></i></a>
+<a href='https://git.ligo.org/lscsoft/pesummary/issues' data-toggle='tooltip' title='Open an issue ticket'><i class='fa fa-ticket' style='font-size: 30px; color: #E8E8E8; font-weight: 900; padding-right:10px'></i></a>
+<a href='https://lscsoft.docs.ligo.org/pesummary/' data-toggle='tooltip' title='View the docs!'><i class='fa fa-book' style='font-size: 30px; color: #E8E8E8; font-weight: 900; padding-right:10px'></i></a>
+<a href='https://lscsoft.docs.ligo.org/pesummary/stable/tutorials/make_your_own_page_from_metafile.html' data-toggle='tooltip' title='Make your own page'><i class='fa fa-window-restore' style='font-size: 30px; color: #E8E8E8; font-weight: 900; padding-right:10px'></i></a>
+      </div>
+    </div>
+    <div class='col-sm-7'>
+<p style='color: #E8E8E8; font-weight: bold; font-family: arial-body; margin-top:14px'>This page was produced by vivien at 16:09 on November 25 2024</p>
+    </div>
+  </div>
+</div>
+</div>
